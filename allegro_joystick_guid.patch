@@ -1,0 +1,316 @@
+diff --git a/include/allegro5/internal/aintern_joystick.h b/include/allegro5/internal/aintern_joystick.h
+index ef31315..eb97a33 100644
+--- a/include/allegro5/internal/aintern_joystick.h
++++ b/include/allegro5/internal/aintern_joystick.h
+@@ -8,6 +8,13 @@
+    extern "C" {
+ #endif
+ 
++#define ALLEGRO_JOYSTICK_GUID_LENGTH 16
++
++struct ALLEGRO_JOYSTICK_GUID
++{
++   uint8_t data[ALLEGRO_JOYSTICK_GUID_LENGTH];
++   char str[ALLEGRO_JOYSTICK_GUID_LENGTH*2 + 1];
++};
+ 
+ typedef struct ALLEGRO_JOYSTICK_DRIVER
+ {
+@@ -67,6 +74,7 @@ typedef struct _AL_JOYSTICK_BUTTON_INFO
+ /* information about an entire joystick */
+ typedef struct _AL_JOYSTICK_INFO
+ {
++   ALLEGRO_JOYSTICK_GUID guid;
+    int num_sticks;
+    int num_buttons;
+    _AL_JOYSTICK_STICK_INFO stick[_AL_MAX_JOYSTICK_STICKS];
+@@ -83,6 +91,7 @@ struct ALLEGRO_JOYSTICK
+ };
+ 
+ void _al_generate_joystick_event(ALLEGRO_EVENT *event);
++void _al_update_joystick_guid_string(ALLEGRO_JOYSTICK *joystick);
+ 
+ #ifdef __cplusplus
+    }
+diff --git a/include/allegro5/joystick.h b/include/allegro5/joystick.h
+index 4b3e648..105345f 100644
+--- a/include/allegro5/joystick.h
++++ b/include/allegro5/joystick.h
+@@ -33,6 +33,7 @@
+ /* Type: ALLEGRO_JOYSTICK
+  */
+ typedef struct ALLEGRO_JOYSTICK ALLEGRO_JOYSTICK;
++typedef struct ALLEGRO_JOYSTICK_GUID ALLEGRO_JOYSTICK_GUID;
+ 
+ 
+ 
+@@ -68,6 +69,8 @@ AL_FUNC(int,            al_get_num_joysticks,   (void));
+ AL_FUNC(ALLEGRO_JOYSTICK *, al_get_joystick,    (int joyn));
+ AL_FUNC(void,           al_release_joystick,    (ALLEGRO_JOYSTICK *));
+ AL_FUNC(bool,           al_get_joystick_active, (ALLEGRO_JOYSTICK *));
++AL_FUNC(ALLEGRO_JOYSTICK_GUID *, al_get_joystick_guid,   (ALLEGRO_JOYSTICK *));
++AL_FUNC(const char*,    al_get_joystick_guid_string,   (ALLEGRO_JOYSTICK *));
+ AL_FUNC(const char*,    al_get_joystick_name,   (ALLEGRO_JOYSTICK *));
+ 
+ AL_FUNC(int,            al_get_joystick_num_sticks, (ALLEGRO_JOYSTICK *));
+diff --git a/src/android/android_joystick.c b/src/android/android_joystick.c
+index 05c10b9..c7c4f58 100644
+--- a/src/android/android_joystick.c
++++ b/src/android/android_joystick.c
+@@ -1,4 +1,4 @@
+-#include "allegro5/allegro.h"
++#include "allegro5/allegro.h"
+ #include "allegro5/internal/aintern.h"
+ #include "allegro5/internal/aintern_events.h"
+ #include "allegro5/internal/aintern_joystick.h"
+@@ -56,6 +56,7 @@ static bool andjoy_init_joystick(void)
+     ALLEGRO_JOYSTICK_ANDROID **ptr;
+     ALLEGRO_JOYSTICK *joy;
+     int num;
++    const char *name_for_guid = "Android Accelerometer";
+ 
+     accel->name = "Accelerometer";
+ 
+@@ -70,6 +71,9 @@ static bool andjoy_init_joystick(void)
+     joy->info.stick[0].axis[1].name = "Y";
+     joy->info.stick[0].axis[2].name = "Z";
+     joy->info.stick[0].flags = ALLEGRO_JOYFLAG_ANALOGUE;
++    memset(joy->info.parent.guid.data, 0, sizeof(joy->info.parent.guid.data));
++    _al_sane_strncpy(&joy->info.parent.guid.data[0], name_for_guid, sizeof(joy->info.parent.guid.data));
++    _al_update_joystick_guid_string(joy);
+ 
+     ptr = _al_vector_alloc_back(&joysticks);
+     *ptr = accel;
+diff --git a/src/gp2xwiz/wiz_joystick.c b/src/gp2xwiz/wiz_joystick.c
+index 6688359..624cd07 100644
+--- a/src/gp2xwiz/wiz_joystick.c
++++ b/src/gp2xwiz/wiz_joystick.c
+@@ -172,6 +172,9 @@ static void joywiz_fill_joy(void)
+ 	joy.info.button[8].name = "VolUp";
+ 	joy.info.button[9].name = "VolDown";
+ 
++    memset(joy.info.parent.guid.data, 0, sizeof(joy.info.parent.guid.data));
++    _al_update_joystick_guid_string(&joy);
++
+ 	joy.num = 0;
+ }
+ 
+diff --git a/src/iphone/iphone_joystick.m b/src/iphone/iphone_joystick.m
+index 2f14284..2fc8c7f 100644
+--- a/src/iphone/iphone_joystick.m
++++ b/src/iphone/iphone_joystick.m
+@@ -18,6 +18,8 @@ static bool ijoy_init_joystick(void)
+ {
+     ALLEGRO_JOYSTICK_IPHONE *ijoy;
+     ALLEGRO_JOYSTICK *joy;
++
++    const char *name_for_guid = "iPhone accelerometer";
+     
+     ijoy = &the_joystick;
+     
+@@ -33,6 +35,10 @@ static bool ijoy_init_joystick(void)
+     joy->info.stick[0].axis[1].name = "Y";
+     joy->info.stick[0].axis[2].name = "Z";
+     joy->info.stick[0].flags = ALLEGRO_JOYFLAG_ANALOGUE;
++
++    memset(joy->info.parent.guid.data, 0, sizeof(joy->info.parent.guid.data));    
++    _al_sane_strncpy(&joy->info.parent.guid.data[0], name_for_guid, sizeof(joy->info.parent.guid.data));    
++    _al_update_joystick_guid_string(joy);
+     
+     // TODO: What's a good frequency to use here?
+     _al_iphone_accelerometer_control(60);
+diff --git a/src/joynu.c b/src/joynu.c
+index ef3ced8..16bfbe6 100644
+--- a/src/joynu.c
++++ b/src/joynu.c
+@@ -133,6 +133,21 @@ void _al_generate_joystick_event(ALLEGRO_EVENT *event)
+ 
+ 
+ 
++void _al_update_joystick_guid_string(ALLEGRO_JOYSTICK *joystick)
++{
++   int i = 0;
++   for ( i=0; i<ALLEGRO_JOYSTICK_GUID_LENGTH; ++i )
++   {
++	  int hi, lo;
++      hi = joystick->info.guid.data[i] / 16;
++	  lo = joystick->info.guid.data[i] % 16;
++	  joystick->info.guid.str[i*2]   = ( hi < 10 ) ? '0' + hi : 'a' + (hi-10);
++	  joystick->info.guid.str[i*2+1] = ( lo < 10 ) ? '0' + lo : 'a' + (lo-10);
++   }
++}
++
++
++
+ /* Function: al_get_num_joysticks
+  */
+ int al_get_num_joysticks(void)
+@@ -191,6 +206,28 @@ const char *al_get_joystick_name(ALLEGRO_JOYSTICK *joy)
+ 
+ 
+ 
++/* Function: al_get_joystick_guid
++ */
++ALLEGRO_JOYSTICK_GUID *al_get_joystick_guid(ALLEGRO_JOYSTICK *joy)
++{
++   ASSERT(joy);
++
++   return &joy->info.guid;
++}
++
++
++
++/* Function: al_get_joystick_guid
++ */
++const char *al_get_joystick_guid_string(ALLEGRO_JOYSTICK *joy)
++{
++   ASSERT(joy);
++
++   return &joy->info.guid.str[0];
++}
++
++
++
+ /* Function: al_get_joystick_num_sticks
+  */
+ int al_get_joystick_num_sticks(ALLEGRO_JOYSTICK *joy)
+diff --git a/src/linux/ljoynu.c b/src/linux/ljoynu.c
+index eaef6ce..3ef012d 100644
+--- a/src/linux/ljoynu.c
++++ b/src/linux/ljoynu.c
+@@ -136,6 +136,15 @@ static ALLEGRO_COND *hotplug_cond;
+ static bool hotplug_ended = false;
+ #endif
+ 
++#ifdef ALLEGRO_LITTLE_ENDIAN
++#define swap_le16(x) (x)
++#else
++uint16_t swap_le16( uint16_t x )
++{
++    return (( x << 8 ) | ( x >> 8 ));
++}
++#endif
++
+ 
+ /* Return true if a joystick-related button or key:
+  *
+@@ -464,6 +473,7 @@ static void ljoy_scan(bool configure)
+    int num;
+    ALLEGRO_USTR *device_name;
+    unsigned i;
++   struct input_id inpid;
+ 
+    /* Clear mark bits. */
+    for (i = 0; i < _al_vector_size(&joysticks); i++) {
+@@ -520,6 +530,28 @@ static void ljoy_scan(bool configure)
+ 
+       if (ioctl(fd, EVIOCGNAME(sizeof(joy->name)), joy->name) < 0)
+          strcpy(joy->name, "Unknown");
++         
++      memset(&joy->parent.info.guid.data, 0, sizeof(joy->parent.info.guid.data));
++      
++      if (ioctl(fd, EVIOCGID, &inpid) >= 0) {
++         uint16_t *guid16 = (uint16_t*)&joy->parent.info.guid.data[0];
++        
++         *(guid16++) = swap_le16(inpid.bustype );
++         *(guid16++) = 0;
++        
++         if (inpid.vendor && inpid.product && inpid.version) {
++    	    *(guid16++) = swap_le16(inpid.vendor );
++            *(guid16++) = 0;
++    	    *(guid16++) = swap_le16(inpid.product );
++            *(guid16++) = 0;
++    	    *(guid16++) = swap_le16(inpid.version );
++            *(guid16++) = 0;
++         } else {
++            _al_sane_strncpy((char*)guid16, joy->name, sizeof(joy->parent.info.guid.data)-4);
++         }
++      }
++
++      _al_update_joystick_guid_string(&joy->parent);
+ 
+       /* Map Linux input API axis and button numbers to ours, and fill in
+        * information.
+diff --git a/src/macosx/hidjoy.m b/src/macosx/hidjoy.m
+index c329447..ee60a38 100644
+--- a/src/macosx/hidjoy.m
++++ b/src/macosx/hidjoy.m
+@@ -256,6 +256,8 @@ static void device_add_callback(
+    IOHIDDeviceRef ref
+ ) {
+    int i;
++   uint32_t *guid32;
++   CFTypeRef refCF;
+ 
+    (void)context;
+    (void)result;
+@@ -297,6 +299,42 @@ static void device_add_callback(
+       joy->parent.info.stick[i].name = buf;
+    }
+ 
++    refCF = IOHIDDeviceGetProperty(ref, CFSTR(kIOHIDVendorIDKey));
++    if (refCF) {
++        CFNumberGetValue(refCF, kCFNumberSInt32Type, &joy->parent.info.guid.data[0]);
++    }
++
++    refCF = IOHIDDeviceGetProperty(ref, CFSTR(kIOHIDProductIDKey));
++    if (refCF) {
++        CFNumberGetValue(refCF, kCFNumberSInt32Type, &joy->parent.info.guid.data[8]);
++    }
++
++    /* Check to make sure we have a vendor and product ID */
++    guid32 = (uint32_t*)&joy->parent.info.guid.data[0];
++    if (!guid32[0] && !guid32[1]) {
++        const char *product = "Unidentified joystick";        
++
++        /* get device name */
++        refCF = IOHIDDeviceGetProperty(ref, CFSTR(kIOHIDProductKey));
++        if (!refCF) {
++            /* Maybe we can't get "AwesomeJoystick2000", but we can get "Logitech"? */
++            refCF = IOHIDDeviceGetProperty(ref, CFSTR(kIOHIDManufacturerKey));
++        }
++
++        if (refCF) {
++            product = CFStringGetCStringPtr(refCF, kCFStringEncodingUTF8);
++        }
++
++        /* If we don't have a vendor and product ID this is probably a Bluetooth device */
++        const uint16_t BUS_BLUETOOTH = 0x05;
++        uint16_t *guid16 = (uint16_t *)guid32;
++        *guid16++ = BUS_BLUETOOTH;
++        *guid16++ = 0;
++        _al_sane_strncpy( (char*)guid16, product, sizeof(joy->parent.info.guid.data) - 4);
++    }
++
++   _al_update_joystick_guid_string(&joy->parent);
++
+    al_unlock_mutex(add_mutex);
+ 
+    osx_joy_generate_configure_event();
+diff --git a/src/win/wjoydxnu.cpp b/src/win/wjoydxnu.cpp
+index 07a367b..eeca53e 100644
+--- a/src/win/wjoydxnu.cpp
++++ b/src/win/wjoydxnu.cpp
+@@ -924,6 +924,8 @@ static BOOL CALLBACK joystick_enum_callback(LPCDIDEVICEINSTANCE lpddi, LPVOID pv
+    joy->device = dinput_device;
+    memcpy(&joy->guid, &lpddi->guidInstance, sizeof(GUID));
+    memcpy(&joy->product_guid, &lpddi->guidProduct, sizeof(GUID));
++   memcpy(&joy->parent.info.guid.data, &lpddi->guidProduct, sizeof(joy->parent.info.guid.data));
++   _al_update_joystick_guid_string(&joy->parent);
+ 
+    _al_sane_strncpy(joy->name, lpddi->tszInstanceName, sizeof(joy->name));
+ 
+diff --git a/src/win/wjoyxi.c b/src/win/wjoyxi.c
+index b72c25c..dd3d2f7 100644
+--- a/src/win/wjoyxi.c
++++ b/src/win/wjoyxi.c
+@@ -504,6 +504,9 @@ static void joyxi_init_joystick_info(ALLEGRO_JOYSTICK_XINPUT *xjoy)
+ {
+    int index, subdex;
+    _AL_JOYSTICK_INFO *info = &xjoy->parent.info;
++   /* Set reserved guid for XInput devices */
++   _al_sane_strncpy((char*)info->guid.data, "xinput", sizeof(info->guid.data));
++   _al_update_joystick_guid_string(&xjoy->parent);
+    /* Map xinput to 4 sticks: 2 thumb pads and 2 triggers. */
+    info->num_sticks = 4;
+    /* Map xinput to 14 buttons */
