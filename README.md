@@ -19,12 +19,15 @@ After building Allegro with the patch, you should place the custom binaries and 
 ### Windows:
 
 allegro_win32\bin - DLLs
+
 allegro_win32\include - header files
+
 allegro_win32\lib - .lib files
 
 ### Linux & MacOS X:
 
 allegro_unix\include - header files
+
 allegro_unix\lib - .a files
 
 ## A note on building for MacOS X with XCode:
