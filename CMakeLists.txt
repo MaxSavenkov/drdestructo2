@@ -202,8 +202,6 @@ set( RES_FILES
 )
 
 set( DOCS
-    docs/Progress.txt
-    docs/TODO.txt
     docs/ReadMe.txt
     docs/ReadMe_Source.txt
 )
