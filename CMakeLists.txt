@@ -305,7 +305,7 @@ if(HAS_STD_SHARED_PTR)
     add_definitions( -DHAS_STD_SHARED_PTR )
 endif(HAS_STD_SHARED_PTR)
 
-add_custom_command( TARGET DrDestructo2 POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/data ${CMAKE_CURRENT_BINARY_DIR}/Data )
+add_custom_command( TARGET DrDestructo2 PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/data ${CMAKE_CURRENT_BINARY_DIR}/Data )
 
 if(WIN32)
     add_custom_command( TARGET DrDestructo2 POST_BUILD COMMAND COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/allegro_win32/bin/ ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR} )
