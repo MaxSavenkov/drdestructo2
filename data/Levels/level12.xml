@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Level Name="12 ECHO BEACH" TargetObject="target12" TX="0" TY="-50" SinkLineY="149" SinkPercent="40" MaxObjects="20">
+
+<Briefing>
+		<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level12_1.txt"/>
+		<Phrase Image="Data/Sprites2/player.png" Text="Data/Texts/level12_2.txt"/>
+		<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level12_3.txt"/>
+		<Phrase Image="Data/Sprites2/player.png" Text="Data/Texts/level12_4.txt"/>
+		<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level12_5.txt"/>
+</Briefing>
+
+<PlayByPlay>
+		<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level12_pbp1.txt" Percent="5"/>
+		<Phrase Image="Data/Sprites2/question.png" Text="Data/Texts/level12_pbp2.txt" Percent="45"/>
+		<Phrase Image="Data/Sprites2/question.png" Text="Data/Texts/level12_pbp3.txt" Percent="80"/>
+</PlayByPlay>
+
+<AI Object="victim_prop" Cooldown="0.5">
+	<Interval Region="LEFT" Dir="RIGHT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT" Dir="LEFT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+
+	<Interval Region="LEFT_NARROW" Dir="RIGHT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT_NARROW" Dir="LEFT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+</AI>
+
+<AI Object="victim_jet" Cooldown="0.5">
+	<Interval Region="LEFT" Dir="RIGHT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT" Dir="LEFT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+
+	<Interval Region="LEFT_NARROW" Dir="RIGHT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT_NARROW" Dir="LEFT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+</AI>
+
+  <AI Object="enemy_jet" Cooldown="0.5">
+    <Interval Region="LEFT" Dir="RIGHT">
+      <Scheme Name="straight" Weight="1"/>
+    </Interval>
+    <Interval Region="RIGHT" Dir="LEFT">
+      <Scheme Name="straight" Weight="1"/>
+    </Interval>
+
+    <Interval Region="LEFT_NARROW" Dir="RIGHT">
+      <Scheme Name="height_change_up" Weight="1"/>
+      <Scheme Name="height_change_down" Weight="1"/>
+    </Interval>
+    <Interval Region="RIGHT_NARROW" Dir="LEFT">
+      <Scheme Name="height_change_up" Weight="1"/>
+      <Scheme Name="height_change_down" Weight="1"/>
+    </Interval>
+  </AI>
+
+  <AI Object="skymine" Cooldown="0.5">
+    <Interval Region="TOP" Dir="RIGHT">
+      <Scheme Name="skymine" Weight="1"/>
+    </Interval>
+  </AI>
+
+  <AI Object="copter" Cooldown="6">
+    <Interval Region="LEFT" Dir="RIGHT">
+      <Scheme Name="copter" Weight="1"/>
+    </Interval>
+    <Interval Region="RIGHT" Dir="LEFT">
+      <Scheme Name="copter" Weight="1"/>
+    </Interval>
+  </AI>
+
+<SkyController>
+</SkyController>
+
+<ReflectionController BeforeAfterY="53">
+</ReflectionController>
+
+</Level>

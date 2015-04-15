@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Levels FirstLevel="0">
+	<Level Path="Data/Levels/level0.xml"/>
+	<Level Path="Data/Levels/level1.xml"/>
+	<Level Path="Data/Levels/level2.xml"/>
+	<Level Path="Data/Levels/level3.xml"/>
+	<Level Path="Data/Levels/level4.xml"/>
+	<Level Path="Data/Levels/level5.xml"/>
+	<Level Path="Data/Levels/level6.xml"/>
+	<Level Path="Data/Levels/level7.xml"/>
+	<Level Path="Data/Levels/level8.xml"/>
+	<Level Path="Data/Levels/level9.xml"/>
+	<Level Path="Data/Levels/level10.xml"/>
+	<Level Path="Data/Levels/level11.xml"/>
+	<Level Path="Data/Levels/level12.xml"/>
+	<Level Path="Data/Levels/level13.xml"/>
+	<Level Path="Data/Levels/level14.xml"/>
+	<Level Path="Data/Levels/level15.xml"/>
+	<Level Path="Data/Levels/level16.xml"/>
+	<Level Path="Data/Levels/level17.xml"/>
+	<Level Path="Data/Levels/level18.xml"/>
+	<Level Path="Data/Levels/level19.xml"/>
+	<Level Path="Data/Levels/level20.xml"/>
+	<Level Path="Data/Levels/level21.xml"/>
+</Levels>

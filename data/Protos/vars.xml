@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Vars>
+
+<!-- ======== Player animations ======== -->
+<Enum Name="PlayerAnims" Type="INT" StartValue="0">
+	<ANIM_PLAYER_RIGHT/>
+	<ANIM_PLAYER_RIGHT_DOWN1/>
+	<ANIM_PLAYER_RIGHT_DOWN2/>
+	<ANIM_PLAYER_DOWN/>
+	<ANIM_PLAYER_LEFT_DOWN2/>
+	<ANIM_PLAYER_LEFT_DOWN1/>
+	<ANIM_PLAYER_LEFT/>
+	<ANIM_PLAYER_LEFT_UP1/>
+	<ANIM_PLAYER_LEFT_UP2/>
+	<ANIM_PLAYER_UP/>
+	<ANIM_PLAYER_RIGHT_UP2/>
+	<ANIM_PLAYER_RIGHT_UP1/>
+  <ANIM_PLAYER_STALL1/>
+  <ANIM_PLAYER_STALL2/>
+</Enum>
+
+<!-- ======== AI animations ======== -->
+<Enum Name="AIAnims" Type="INT" StartValue="0">
+	<ANIM_AI_RIGHT/>
+	<ANIM_AI_LEFT/>
+	<ANIM_AI_UP/>
+	<ANIM_AI_DOWN/>
+	<ANIM_AI_UP_LEFT/>
+	<ANIM_AI_DOWN_LEFT/>
+	<ANIM_AI_UP_RIGHT/>
+	<ANIM_AI_DOWN_RIGHT/>
+  <ANIM_FLIP_RTL/>
+  <ANIM_FLIP_LTR/>
+</Enum>
+
+<!-- ======== Collision layers ======== -->
+<Enum Name="Collisions" Type="INT" StartValue="0">
+	<COLLISIONS_PLAYER/>
+	<COLLISIONS_PLAYER_BULLET/>
+	<COLLISIONS_ENEMY/>
+	<COLLISIONS_ENEMY_HARMLESS/>
+	<COLLISIONS_ENEMY_BULLET/>
+	<COLLISIONS_ENEMY_HARMLESS_SHOT_DOWN/>
+	<COLLISIONS_ENEMY_SHOT_DOWN/>
+	<COLLISIONS_ENEMY_INVUL/>
+	<COLLISIONS_PLAYER_SHOT_DOWN/>
+	<COLLISIONS_TARGET/>
+</Enum>
+
+<!-- ======== Object owners ======== -->
+<Enum Name="ObjOwner" Type="INT" StartValue="0">
+	<OWNER_AI/>
+	<OWNER_PLAYER1/>
+	<OWNER_PLAYER2/>
+</Enum>
+  
+<!-- ======== GM Types ======== -->
+<Enum Name="GMType" Type="INT" StartValue="0">
+  <GM_PLAYER/>
+  <GM_ENEMY/>
+  <GM_ENEMY_INVUL/>
+  <GM_ENEMY_DOUBLE/>
+  <GM_BULLET/>
+  <GM_TARGET/>
+  <GM_SHOT_DOWN/>
+</Enum>
+
+<!-- ======== Graphic caps ======== -->
+<BitEnum Name="GraphCaps" Type="INT" StartValue="0">
+	<GRAPH_CAPS_TURN_ANIMS/>
+	<GRAPH_CAPS_INDEPENDENT_ANIMS/>
+  <GRAPH_CAPS_INDEPENDENT_ANGLE/>
+  <GRAPH_CAPS_SPECIAL_FALLING/>
+  <GRAPH_CAPS_CLONE/>
+  <GRAPH_CAPS_TRAIL/>
+</BitEnum>
+
+<!-- ======== Physics caps ======== -->
+<BitEnum Name="GraphCaps" Type="INT" StartValue="0">
+	<PHYS_CAPS_FOLLOW_ANGLE/>
+  <PHYS_CAPS_FALLING/>
+</BitEnum>
+
+<!-- ======== Render layers ======== -->
+  <!--
+    Небо
+    Вода 1
+    Цель
+    Вода 2
+    Объекты
+    Игрок
+  -->
+<Enum Name="RenderLayer" Type="INT" StartValue="0">
+  <RL_SKY/>
+  <RL_BG_BEFORE/>
+  <RL_BACKGROUND/>
+  <RL_TARGET/>
+  <RL_BG_AFTER/>
+  <RL_MIDGROUND/>
+  <RL_OBJECTS/>
+  <RL_PLAYER/>
+  <RL_FOREGROUND/>
+</Enum>
+
+</Vars>

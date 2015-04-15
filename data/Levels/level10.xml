@@ -1,0 +1,97 @@
+	<?xml version="1.0" encoding="utf-8" ?>
+<Level Name="10 CLOBBER CASTLE" TargetObject="target10" TX="0" TY="-46" SinkLineY="217" SinkPercent="30"  MaxObjects="19">
+
+<Briefing>
+	<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level10_1.txt"/>
+	<Phrase Image="Data/Sprites2/player.png" Text="Data/Texts/level10_2.txt"/>
+	<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level10_3.txt"/>
+</Briefing>
+
+<PlayByPlay>
+	<Phrase Image="Data/Sprites2/henchman.png" Text="Data/Texts/level10_pbp1.txt" Percent="5"/>
+	<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level10_pbp2.txt" Percent="50"/>
+	<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level10_pbp3.txt" Percent="85"/>
+</PlayByPlay>
+
+<AI Object="bomber" Cooldown="10">
+	<Interval Region="LEFT" Dir="RIGHT">
+		<Scheme Name="bomber" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT" Dir="LEFT">
+		<Scheme Name="bomber" Weight="1"/>
+	</Interval>
+</AI>
+
+<AI Object="two_seater" Cooldown="5">
+	<Interval Region="LEFT" Dir="RIGHT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT" Dir="LEFT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+
+	<Interval Region="LEFT_NARROW" Dir="RIGHT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT_NARROW" Dir="LEFT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+</AI>
+
+<AI Object="victim_jet" Cooldown="0.5">
+	<Interval Region="LEFT" Dir="RIGHT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT" Dir="LEFT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+
+	<Interval Region="LEFT_NARROW" Dir="RIGHT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT_NARROW" Dir="LEFT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+</AI>
+
+  <AI Object="enemy_jet" Cooldown="0.5">
+    <Interval Region="LEFT" Dir="RIGHT">
+      <Scheme Name="straight" Weight="1"/>
+    </Interval>
+    <Interval Region="RIGHT" Dir="LEFT">
+      <Scheme Name="straight" Weight="1"/>
+    </Interval>
+
+    <Interval Region="LEFT_NARROW" Dir="RIGHT">
+      <Scheme Name="height_change_up" Weight="1"/>
+      <Scheme Name="height_change_down" Weight="1"/>
+    </Interval>
+    <Interval Region="RIGHT_NARROW" Dir="LEFT">
+      <Scheme Name="height_change_up" Weight="1"/>
+      <Scheme Name="height_change_down" Weight="1"/>
+    </Interval>
+  </AI>
+
+  <AI Object="copter" Cooldown="10">
+    <Interval Region="LEFT" Dir="RIGHT">
+      <Scheme Name="copter" Weight="1"/>
+    </Interval>
+    <Interval Region="RIGHT" Dir="LEFT">
+      <Scheme Name="copter" Weight="1"/>
+    </Interval>
+  </AI>
+
+<SkyController>
+</SkyController>
+
+<GroundController ImageMg="Data/Sprites2/target10_ground_mg.png" Ymg="-161" ImageBg="Data/Sprites2/target10_ground_bg.png" Ybg="0">
+</GroundController>
+
+<GroundController>
+</GroundController>
+
+</Level>

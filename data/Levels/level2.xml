@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Level Name="02 LITHIUM" TargetObject="target02" TX="0" TY="-20" SinkLineY="190" SinkPercent="42" MaxObjects="6">
+
+<Briefing>
+	<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level02_1.txt"/>
+	<Phrase Image="Data/Sprites2/player.png"  Text="Data/Texts/level02_2.txt"/>
+	<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level02_3.txt"/>
+	<Phrase Image="Data/Sprites2/player.png"  Text="Data/Texts/level02_4.txt"/>
+	<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level02_5.txt"/>
+</Briefing>
+
+<PlayByPlay>
+	<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level02_pbp1.txt" Percent="8"/>
+	<Phrase Image="Data/Sprites2/henchman.png" Text="Data/Texts/level02_pbp2.txt" Percent="40"/>
+	<Phrase Image="Data/Sprites2/henchman.png" Text="Data/Texts/level02_pbp3.txt" Percent="80"/>
+</PlayByPlay>
+
+<AI Object="victim_prop" Cooldown="0.5">
+	<Interval Region="LEFT" Dir="RIGHT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT" Dir="LEFT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+
+	<Interval Region="LEFT_NARROW" Dir="RIGHT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT_NARROW" Dir="LEFT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+</AI>
+
+<AI Object="victim_jet" Cooldown="0.5">
+	<Interval Region="LEFT" Dir="RIGHT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT" Dir="LEFT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+
+	<Interval Region="LEFT_NARROW" Dir="RIGHT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT_NARROW" Dir="LEFT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+</AI>
+
+  <AI Object="enemy_prop" Cooldown="0.5">
+    <Interval Region="LEFT" Dir="RIGHT">
+      <Scheme Name="straight" Weight="1"/>
+    </Interval>
+    <Interval Region="RIGHT" Dir="LEFT">
+      <Scheme Name="straight" Weight="1"/>
+    </Interval>
+
+    <Interval Region="LEFT_NARROW" Dir="RIGHT">
+      <Scheme Name="height_change_up" Weight="1"/>
+      <Scheme Name="height_change_down" Weight="1"/>
+    </Interval>
+    <Interval Region="RIGHT_NARROW" Dir="LEFT">
+      <Scheme Name="height_change_up" Weight="1"/>
+      <Scheme Name="height_change_down" Weight="1"/>
+    </Interval>
+  </AI>
+
+<SkyController>
+</SkyController>
+
+<ReflectionController BeforeAfterY="65">
+</ReflectionController>
+
+<GroundController>
+</GroundController>
+
+</Level>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Level Name="01 BANYO" TargetObject="target01" TX="0" TY="-50" SinkLineY="190" SinkPercent="50" MaxObjects="5">
+
+<Briefing>
+	<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level01_1.txt"/>
+	<Phrase Image="Data/Sprites2/player.png"  Text="Data/Texts/level01_2.txt"/>
+	<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level01_3.txt"/>
+</Briefing>
+
+<PlayByPlay>
+	<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level01_pbp1.txt" Percent="10"/>
+	<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level01_pbp2.txt" Percent="50"/>
+	<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level01_pbp3.txt" Percent="80"/>
+</PlayByPlay>
+
+
+<AI Object="victim_prop" Cooldown="0.5">
+	<Interval Region="LEFT" Dir="RIGHT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT" Dir="LEFT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+
+	<Interval Region="LEFT_NARROW" Dir="RIGHT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT_NARROW" Dir="LEFT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+</AI>
+
+<AI Object="victim_jet" Cooldown="0.5">
+	<Interval Region="LEFT" Dir="RIGHT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT" Dir="LEFT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+
+	<Interval Region="LEFT_NARROW" Dir="RIGHT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT_NARROW" Dir="LEFT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+</AI>
+
+<SkyController>
+</SkyController>
+
+<ReflectionController BeforeAfterY="55">
+</ReflectionController>
+
+<GroundController>
+</GroundController>
+
+</Level>

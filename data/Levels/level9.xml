@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Level Name="09 DOMINION" TargetObject="target09" TX="0" TY="-117" SinkLineY="231" SinkPercent="50"  MaxObjects="17">
+
+<Briefing>
+	<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level09_1.txt"/>
+	<Phrase Image="Data/Sprites2/player.png" Text="Data/Texts/level09_2.txt"/>
+	<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level09_3.txt"/>
+	<Phrase Image="Data/Sprites2/player.png" Text="Data/Texts/level09_4.txt"/>
+</Briefing>
+
+<PlayByPlay>
+	<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level09_pbp1.txt" Percent="5"/>
+	<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level09_pbp2.txt" Percent="50"/>
+	<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level09_pbp3.txt" Percent="85"/>
+</PlayByPlay>
+
+<AI Object="bomber" Cooldown="20">
+	<Interval Region="LEFT" Dir="RIGHT">
+		<Scheme Name="bomber" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT" Dir="LEFT">
+		<Scheme Name="bomber" Weight="1"/>
+	</Interval>
+</AI>
+
+<AI Object="two_seater" Cooldown="20">
+	<Interval Region="LEFT" Dir="RIGHT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT" Dir="LEFT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+
+	<Interval Region="LEFT_NARROW" Dir="RIGHT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT_NARROW" Dir="LEFT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+</AI>
+
+<AI Object="victim_prop" Cooldown="0.5">
+	<Interval Region="LEFT" Dir="RIGHT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT" Dir="LEFT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+
+	<Interval Region="LEFT_NARROW" Dir="RIGHT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT_NARROW" Dir="LEFT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+</AI>
+
+<AI Object="victim_jet" Cooldown="0.5">
+	<Interval Region="LEFT" Dir="RIGHT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT" Dir="LEFT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+
+	<Interval Region="LEFT_NARROW" Dir="RIGHT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT_NARROW" Dir="LEFT">
+		<Scheme Name="height_change_up" Weight="1"/>
+		<Scheme Name="height_change_down" Weight="1"/>
+	</Interval>
+</AI>
+
+  <AI Object="enemy_prop" Cooldown="0.5">
+    <Interval Region="LEFT" Dir="RIGHT">
+      <Scheme Name="straight" Weight="1"/>
+    </Interval>
+    <Interval Region="RIGHT" Dir="LEFT">
+      <Scheme Name="straight" Weight="1"/>
+    </Interval>
+
+    <Interval Region="LEFT_NARROW" Dir="RIGHT">
+      <Scheme Name="height_change_up" Weight="1"/>
+      <Scheme Name="height_change_down" Weight="1"/>
+    </Interval>
+    <Interval Region="RIGHT_NARROW" Dir="LEFT">
+      <Scheme Name="height_change_up" Weight="1"/>
+      <Scheme Name="height_change_down" Weight="1"/>
+    </Interval>
+  </AI>
+
+  <AI Object="enemy_jet" Cooldown="0.5">
+    <Interval Region="LEFT" Dir="RIGHT">
+      <Scheme Name="straight" Weight="1"/>
+    </Interval>
+    <Interval Region="RIGHT" Dir="LEFT">
+      <Scheme Name="straight" Weight="1"/>
+    </Interval>
+
+    <Interval Region="LEFT_NARROW" Dir="RIGHT">
+      <Scheme Name="height_change_up" Weight="1"/>
+      <Scheme Name="height_change_down" Weight="1"/>
+    </Interval>
+    <Interval Region="RIGHT_NARROW" Dir="LEFT">
+      <Scheme Name="height_change_up" Weight="1"/>
+      <Scheme Name="height_change_down" Weight="1"/>
+    </Interval>
+  </AI>
+
+  <AI Object="copter" Cooldown="20">
+    <Interval Region="LEFT" Dir="RIGHT">
+      <Scheme Name="copter" Weight="1"/>
+    </Interval>
+    <Interval Region="RIGHT" Dir="LEFT">
+      <Scheme Name="copter" Weight="1"/>
+    </Interval>
+  </AI>
+
+<SkyController>
+</SkyController>
+
+<GroundController ImageMg="Data/Sprites2/target09_ground_mg.png" Ymg="-30" Yfg="-120" ImageFg="Data/Sprites2/target09_ground_fg.png">
+</GroundController>
+
+</Level>

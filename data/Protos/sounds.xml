@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Sounds>
+
+  <Sound Name="player_plane">
+    <Event ID="player_engine" Path="Data/Sounds/engine1.ogg" Volume="0.09" Looped="1">
+      <PitchFollowsAngle MinPitch="0.95" MaxPitch="1.05"/>
+    </Event>
+    <Event ID="fire1" Path="Data/Sounds/player_gun.ogg" Volume="1.0" Looped="0"/>
+  </Sound>
+
+  <Sound Name="player_dead">
+    <Event ID="explosion" Path="Data/Sounds/explosion_player.ogg" Volume="0.5" Looped="0"/>
+  </Sound>
+
+  <Sound Name="enemy_plane_dead">
+    <Event ID="explosion" Path="Data/Sounds/explosion.wav" Volume="0.5" Looped="0"/>
+  </Sound>
+
+  <Sound Name="enemy_big_dead">
+    <Event ID="spawn" Path="Data/Sounds/explosion2.ogg" Volume="0.5" Looped="0"/>
+    <Event ID="explosion" Path="Data/Sounds/explosion2.ogg" Volume="0.5" Looped="0"/>
+  </Sound>
+
+  <Sound Name="explosion_on_target">
+    <Event ID="explosion_target" Path="Data/Sounds/explosion_target.ogg" Volume="0.5" Looped="0"/>
+  </Sound>
+
+</Sounds>

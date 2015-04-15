@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Protos>
+	<Proto Name="player_plane">
+		<Graphics Name="player_plane" />
+		<Physics  Name="player_plane" />
+		<Controls Name="player_plane" />
+		<Mechanics Name="player_plane" />
+    <Sounds Name="player_plane" />
+	</Proto>
+	
+	<Proto Name="victim_prop">
+		<Graphics Name="prop_plane_green" />
+		<Physics  Name="prop_plane" />	
+		<Controls Name="ai" />
+    <Mechanics Name="ai_victim_prop" />
+	</Proto>
+	
+	<Proto Name="victim_jet">
+		<Graphics Name="jet_plane_yellow" />
+		<Physics  Name="jet_plane" />	
+		<Controls Name="ai" />
+    <Mechanics Name="ai_victim_jet" />
+	</Proto>
+
+  <Proto Name="enemy_prop">
+    <Graphics Name="prop_plane_cyan" />
+    <Physics  Name="prop_plane_enemy" />
+    <Controls Name="ai" />
+    <Mechanics Name="ai_enemy_prop" />
+  </Proto>
+
+  <Proto Name="enemy_jet">
+    <Graphics Name="jet_plane_purple" />
+    <Physics  Name="jet_plane_enemy" />
+    <Controls Name="ai" />
+    <Mechanics Name="ai_enemy_jet" />
+  </Proto>
+
+  <Proto Name="player_bullet">
+		<Graphics Name="player_bullet" />
+		<Physics  Name="player_bullet" />
+    <Mechanics Name="player_bullet" />
+	</Proto>
+
+  <Proto Name="player_bullet_hlw">
+    <Graphics Name="player_bullet_hlw" />
+    <Physics  Name="player_bullet_hlw" />
+    <Mechanics Name="player_bullet_hlw" />
+  </Proto>
+
+  <Proto Name="player_bullet_xmas">
+    <Graphics Name="player_bullet_xmas" />
+    <Physics  Name="player_bullet_xmas" />
+    <Mechanics Name="player_bullet_xmas" />
+  </Proto>
+
+  <Proto Name="player_bullet_ny">
+    <Graphics Name="player_bullet_ny" />
+    <Physics  Name="player_bullet_ny" />
+    <Mechanics Name="player_bullet_ny" />
+  </Proto>
+
+  <Proto Name="player_bullet_stval">
+    <Graphics Name="player_bullet_stval" />
+    <Physics  Name="player_bullet_stval" />
+    <Mechanics Name="player_bullet_stval" />
+  </Proto>
+
+  <Proto Name="player_dead">
+		<Graphics Name="player_dead" />
+		<Physics  Name="player_dead" />
+    <Controls Name="ai" />
+    <Mechanics Name="shot_down" />
+    <Sounds   Name="player_dead" />
+	</Proto>
+
+	<Proto Name="victim_prop_dead">
+		<Graphics Name="victim_dead" />
+    <Controls Name="ai" />
+		<Physics  Name="victim_dead" />
+    <Mechanics Name="dummy_dead" />
+    <Sounds   Name="enemy_plane_dead" />
+  </Proto>
+
+  <Proto Name="victim_jet_dead" INHERIT="victim_prop_dead">
+  </Proto>
+
+  <Proto Name="enemy_prop_dead">
+    <Graphics Name="enemy_dead" />
+    <Controls Name="ai" />
+    <Physics  Name="enemy_dead" />
+    <Mechanics Name="dummy_dead" />
+    <Sounds   Name="enemy_plane_dead" />
+  </Proto>
+
+  <Proto Name="enemy_jet_dead" INHERIT="enemy_prop_dead">
+  </Proto>
+
+  <Proto Name="victim_prop_falling">
+		<Graphics Name="victim_prop_falling" />
+		<Physics  Name="plane_falling" />
+    <Controls Name="ai" />
+    <Mechanics Name="shot_down" />
+	</Proto>
+
+  <Proto Name="victim_jet_falling" INHERIT="victim_prop_falling">
+    <Graphics Name="victim_jet_falling" />
+  </Proto>
+
+  <Proto Name="enemy_prop_falling">
+    <Graphics Name="enemy_prop_falling" />
+    <Physics  Name="plane_falling" />
+    <Controls Name="ai" />
+    <Mechanics Name="shot_down" />
+  </Proto>
+
+  <Proto Name="enemy_jet_falling" INHERIT="enemy_prop_falling">
+    <Graphics Name="enemy_jet_falling" />
+  </Proto>
+
+  <Proto Name="target01">
+    <Graphics Name="target01" />
+    <Physics  Name="target01" />
+    <Mechanics Name="target" />
+  </Proto>
+
+  <Proto Name="target02">
+    <Graphics Name="target02" />
+    <Physics  Name="target02" />
+    <Mechanics Name="target" />
+  </Proto>
+
+  <Proto Name="target03">
+    <Graphics Name="target03" />
+    <Physics  Name="target03" />
+    <Mechanics Name="target" />
+  </Proto>
+
+  <Proto Name="target04">
+    <Graphics Name="target04" />
+    <Physics  Name="target04" />
+    <Mechanics Name="target" />
+  </Proto>
+
+  <Proto Name="target05">
+    <Graphics Name="target05" />
+    <Physics  Name="target05" />
+    <Mechanics Name="target" />
+  </Proto>
+
+  <Proto Name="target06">
+    <Graphics Name="target06" />
+    <Physics  Name="target06" />
+    <Mechanics Name="target" />
+  </Proto>
+
+  <Proto Name="target07">
+    <Graphics Name="target07" />
+    <Physics  Name="target07" />
+    <Mechanics Name="target" />
+  </Proto>
+
+  <Proto Name="target08">
+    <Graphics Name="target08" />
+    <Physics  Name="target08" />
+    <Mechanics Name="target" />
+  </Proto>
+
+  <Proto Name="target09">
+    <Graphics Name="target09" />
+    <Physics  Name="target09" />
+    <Mechanics Name="target" />
+  </Proto>
+
+  <Proto Name="target10">
+    <Graphics Name="target10" />
+    <Physics  Name="target10" />
+    <Mechanics Name="target" />
+  </Proto>
+
+  <Proto Name="target11">
+    <Graphics Name="target11" />
+    <Physics  Name="target11" />
+    <Mechanics Name="target" />
+  </Proto>
+
+  <Proto Name="target12">
+    <Graphics Name="target12" />
+    <Physics  Name="target12" />
+    <Mechanics Name="target" />
+  </Proto>
+
+  <Proto Name="target13">
+    <Graphics Name="target13" />
+    <Physics  Name="target13" />
+    <Mechanics Name="target" />
+  </Proto>
+
+  <Proto Name="target14">
+    <Graphics Name="target14" />
+    <Physics  Name="target14" />
+    <Mechanics Name="target" />
+  </Proto>
+
+  <Proto Name="target15">
+    <Graphics Name="target15" />
+    <Physics  Name="target15" />
+    <Mechanics Name="target" />
+  </Proto>
+
+  <Proto Name="target16">
+    <Graphics Name="target16" />
+    <Physics  Name="target16" />
+    <Mechanics Name="target" />
+  </Proto>
+
+  <Proto Name="target17">
+    <Graphics Name="target17" />
+    <Physics  Name="target17" />
+    <Mechanics Name="target" />
+  </Proto>
+
+  <Proto Name="target18">
+    <Graphics Name="target18" />
+    <Physics  Name="target18" />
+    <Mechanics Name="target" />
+  </Proto>
+
+  <Proto Name="target19">
+    <Graphics Name="target19" />
+    <Physics  Name="target19" />
+    <Mechanics Name="target" />
+  </Proto>
+
+  <Proto Name="target20">
+    <Graphics Name="target20" />
+    <Physics  Name="target20" />
+    <Mechanics Name="target" />
+  </Proto>
+
+  <Proto Name="target21">
+    <Graphics Name="target21" />
+    <Physics  Name="target21" />
+    <Mechanics Name="target" />
+  </Proto>
+  
+  <Proto Name="explosion_on_target">
+    <Graphics Name="explosion_on_target" />
+    <Physics  Name="explosion_on_target" />
+    <Controls Name="ai" />
+    <Sounds   Name="explosion_on_target" />
+  </Proto>
+
+  <Proto Name="skymine">
+    <Graphics Name="skymine" />
+    <Physics  Name="skymine" />
+    <Controls Name="ai" />
+    <Mechanics Name="skymine" />
+  </Proto>
+
+  <Proto Name="copter">
+    <Graphics Name="copter" />
+    <Physics  Name="copter" />
+    <Controls Name="ai" />
+    <Mechanics Name="ai_enemy_copter" />
+  </Proto>
+
+  <Proto Name="enemy_copter_dead">
+    <Graphics Name="copter_falling" />
+    <Physics  Name="copter_falling" />
+    <Controls Name="ai" />
+    <Mechanics Name="shot_down" />
+    <Sounds   Name="enemy_big_dead" />
+  </Proto>
+
+  <Proto Name="dart">
+    <Graphics Name="dart" />
+    <Physics  Name="dart" />
+    <Controls Name="ai" />
+    <Mechanics Name="dart" />
+  </Proto>
+
+  <Proto Name="two_seater">
+    <Graphics Name="two_seater" />
+    <Physics  Name="two_seater" />
+    <Controls Name="ai" />
+    <Mechanics Name="two_seater" />
+  </Proto>
+
+  <Proto Name="two_seater_morph">
+    <Graphics Name="two_seater_morph" />
+    <Physics  Name="two_seater" />
+    <Controls Name="ai" />
+    <Mechanics Name="two_seater_morph" />
+  </Proto>
+
+  <Proto Name="bomber">
+    <Graphics Name="bomber" />
+    <Physics  Name="bomber" />
+    <Controls Name="ai" />
+    <Mechanics Name="bomber" />
+  </Proto>
+
+  <Proto Name="enemy_bomber_dead">
+    <Graphics Name="bomber_falling" />
+    <Physics  Name="bomber_falling" />
+    <Controls Name="ai" />
+    <Mechanics Name="shot_down" />
+    <Sounds   Name="enemy_big_dead" />
+  </Proto>
+
+  <Proto Name="enemy_bomb">
+    <Graphics Name="enemy_bomb" />
+    <Physics  Name="enemy_bomb" />
+    <Controls Name="ai" />
+    <Mechanics Name="enemy_bomb" />
+  </Proto>
+
+  <Proto Name="bomb_explosion">
+    <Graphics Name="bomb_explosion" />
+    <Physics  Name="bomb_explosion" />
+    <Controls Name="ai" />
+    <Mechanics Name="bomb_explosion" />
+  </Proto>
+
+  <Proto Name="player_bomb">
+    <Graphics Name="player_bomb" />
+    <Physics  Name="player_bomb" />
+    <Controls Name="ai" />
+    <Mechanics Name="player_bomb" />
+  </Proto>
+
+  <Proto Name="ufo_spawn">
+    <Graphics Name="ufo_spawn" />
+    <Physics  Name="ufo_spawn" />
+    <Controls Name="ai" />
+    <Mechanics Name="ufo_spawn" />
+  </Proto>
+  <Proto Name="ufo">
+    <Graphics Name="ufo" />
+    <Physics  Name="ufo" />
+    <Controls Name="ai" />
+    <Mechanics Name="ufo" />
+  </Proto>
+  <Proto Name="ufo_despawn">
+    <Graphics Name="ufo_despawn" />
+    <Physics  Name="ufo_despawn" />
+    <Controls Name="ai" />
+    <Mechanics Name="ufo_despawn" />
+  </Proto>
+  <Proto Name="ufo_death">
+    <Graphics Name="ufo_death" />
+    <Physics  Name="ufo_death" />
+    <Controls Name="ai" />
+    <Mechanics Name="ufo_death" />
+    <Sounds   Name="enemy_big_dead" />
+  </Proto>
+  <Proto Name="ufo_dead">
+    <Graphics Name="ufo_dead" />
+    <Physics  Name="ufo_dead" />
+    <Controls Name="ai" />
+    <Mechanics Name="ufo_dead" />
+  </Proto>
+
+  <Proto Name="hyperjet_slow">
+    <Graphics Name="hyperjet_slow" />
+    <Physics  Name="hyperjet_slow" />
+    <Controls Name="ai" />
+    <Mechanics Name="hyperjet_slow" />
+  </Proto>
+  <Proto Name="hyperjet_stop">
+    <Graphics Name="hyperjet_stop" />
+    <Physics  Name="hyperjet_stop" />
+    <Controls Name="ai" />
+    <Mechanics Name="hyperjet_stop" />
+  </Proto>
+  <Proto Name="hyperjet_fast">
+    <Graphics Name="hyperjet_fast" />
+    <Physics  Name="hyperjet_fast" />
+    <Controls Name="ai" />
+    <Mechanics Name="hyperjet_fast" />
+  </Proto>
+
+  <Proto Name="hyperjet_dead1">
+    <Graphics Name="explosion_on_target" />
+    <Physics  Name="hyperjet_dead" />
+    <Controls Name="ai" />
+    <Mechanics Name="hyperjet_dead" />
+    <Sounds   Name="enemy_plane_dead" />
+  </Proto>
+
+  <Proto Name="hyperjet_dead2">
+    <Graphics Name="hyperjet_dead" />
+    <Physics  Name="hyperjet_dead" />
+    <Controls Name="ai" />
+    <Mechanics Name="hyperjet_dead" />
+  </Proto>
+
+  <Proto Name="paranoia_white">
+    <Graphics Name="paranoia_white" />
+    <Physics  Name="paranoia" />
+    <Controls Name="ai" />
+    <Mechanics Name="paranoia_white" />
+  </Proto>
+
+  <Proto Name="paranoia_white_dead">
+    <Graphics Name="paranoia_white_dead" />
+    <Physics  Name="paranoia_dead" />
+    <Controls Name="ai" />
+    <Mechanics Name="paranoia_dead" />
+    <Sounds   Name="enemy_plane_dead" />
+  </Proto>
+
+  <Proto Name="paranoia_red">
+    <Graphics Name="paranoia_red" />
+    <Physics  Name="paranoia" />
+    <Controls Name="ai" />
+    <Mechanics Name="paranoia_red" />
+  </Proto>
+
+  <Proto Name="paranoia_red_dead">
+    <Graphics Name="paranoia_red_dead" />
+    <Physics  Name="paranoia_dead" />
+    <Controls Name="ai" />
+    <Mechanics Name="paranoia_dead" />
+    <Sounds   Name="enemy_plane_dead" />
+  </Proto>
+
+  <Proto Name="shuttle">
+    <Graphics Name="shuttle" />
+    <Physics  Name="shuttle" />
+    <Controls Name="ai" />
+    <Mechanics Name="shuttle" />
+  </Proto>
+
+  <Proto Name="shuttle_dead">
+    <Graphics Name="shuttle_dead" />
+    <Physics  Name="shuttle_dead" />
+    <Controls Name="ai" />
+    <Mechanics Name="shuttle_dead" />
+    <Sounds   Name="enemy_big_dead" />
+  </Proto>
+
+  <Proto Name="satellite_deploy">
+    <Graphics Name="satellite_deploy" />
+    <Physics  Name="satellite" />
+    <Controls Name="ai" />
+    <Mechanics Name="satellite" />
+    <!--Sounds   Name="satellite" /-->
+  </Proto>
+  
+  <Proto Name="satellite">
+    <Graphics Name="satellite" />
+    <Physics  Name="satellite" />
+    <Controls Name="ai" />
+    <Mechanics Name="satellite" />
+    <!--Sounds   Name="satellite" /-->
+  </Proto>
+
+  <Proto Name="spacejet">
+    <Graphics Name="spacejet" />
+    <Physics  Name="spacejet" />
+    <Controls Name="ai" />
+    <Mechanics Name="spacejet" />
+    <!--Sounds   Name="spacejet" /-->
+  </Proto>
+
+  <Proto Name="spacejet_dead">
+    <Graphics Name="spacejet_dead" />
+    <Physics  Name="spacejet_dead" />
+    <Controls Name="ai" />
+    <Mechanics Name="spacejet_dead" />
+    <Sounds   Name="enemy_plane_dead" />
+  </Proto>
+
+  <Proto Name="final_explosion">
+    <Graphics Name="final_explosion" />
+    <!--Physics  Name="final_explosion" /-->
+    <!--Controls Name="ai" /-->
+    <!--Mechanics Name="spacejet_dead" /-->
+    <!--Sounds   Name="enemy_plane_dead" /-->
+  </Proto>
+  
+</Protos>

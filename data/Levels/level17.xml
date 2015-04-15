@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Level Name="17 PARANOIA" TargetObject="target17" TX="0" TY="-50" SinkLineY="122" SinkPercent="95" MaxObjects="10">
+
+<Briefing>
+		<Phrase Image="Data/Sprites2/player.png" Text="Data/Texts/level17_1.txt"/>
+		<Phrase Image="Data/Sprites2/player.png" Text="Data/Texts/level17_2.txt"/>
+		<Phrase Image="Data/Sprites2/player.png" Text="Data/Texts/level17_3.txt"/>
+		<Phrase Image="Data/Sprites2/question.png" Text="Data/Texts/level17_4.txt"/>
+</Briefing>
+
+<PlayByPlay>
+		<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level17_pbp1.txt" Percent="10"/>
+		<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level17_pbp2.txt" Percent="40"/>
+		<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level17_pbp3.txt" Percent="80"/>
+</PlayByPlay>
+
+<AI Object="paranoia_white" Cooldown="0.5">
+	<Interval Region="LEFT" Dir="RIGHT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT" Dir="LEFT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+</AI>
+
+<AI Object="paranoia_red" Cooldown="0.5">
+	<Interval Region="LEFT" Dir="RIGHT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+	<Interval Region="RIGHT" Dir="LEFT">
+		<Scheme Name="straight" Weight="1"/>
+	</Interval>
+</AI>
+
+<SkyController>
+</SkyController>
+
+<ReflectionController BeforeAfterY="64">
+</ReflectionController>
+
+</Level>

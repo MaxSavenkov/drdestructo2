@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Music>
+	<Event ID="INTRO" Path="Data/Music/Game music 2.it"/>
+	<Event ID="MENU"  Path="Data/Music/Game music 2.it"/>
+
+	<Event ID="WIN_LEVEL" Path="Data/Music/Game music - Win.it"/>
+
+	<Event ID="BRIEFING" Path="Data/Music/Game music - Brief.it"/>
+
+	<Event ID="LEVEL" Path="Data/Music/Game music 1.it"/>
+</Music>

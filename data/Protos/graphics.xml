@@ -1,0 +1,1219 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Graphics>
+
+	<!-- ================================================================== -->
+	
+	<Graphic Name="player_plane" Layer="$RL_PLAYER">
+		<Caps ID="$GRAPH_CAPS_TURN_ANIMS"/> 
+		
+		<Image Path="Data/Sprites2/player_plane.png" />
+
+		<Animation ID="$ANIM_PLAYER_RIGHT" FPS="6" Dir="1" Reverse="1" SoundEvent="player_engine">
+			<Frame X="0" Y="0"  W="64" H="27"/>
+			<Frame X="0" Y="28" W="64" H="27"/>
+			<Frame X="0" Y="56" W="64" H="27"/>
+		</Animation>
+		
+		<Animation ID="$ANIM_PLAYER_RIGHT_DOWN1" INHERIT="$ANIM_PLAYER_LEFT_DOWN1" FlipH="1" SoundEvent="player_engine"/>
+
+		<Animation ID="$ANIM_PLAYER_RIGHT_DOWN2" FPS="0" SoundEvent="player_engine">
+			<Frame X="196" Y="1" W="52" H="58"/>
+		</Animation>		
+
+		<Animation ID="$ANIM_PLAYER_DOWN" FPS="0" SoundEvent="player_engine">
+			<Frame X="198" Y="60" W="61" H="65"/>
+		</Animation>
+
+		<Animation ID="$ANIM_PLAYER_LEFT_DOWN2" FPS="0" SoundEvent="player_engine">
+			<Frame X="204" Y="126" W="52" H="58"/>
+		</Animation>
+
+		<Animation ID="$ANIM_PLAYER_LEFT_DOWN1" FPS="0" SoundEvent="player_engine">
+			<Frame X="65" Y="0" W="61" H="46"/>
+		</Animation>
+
+		<Animation ID="$ANIM_PLAYER_LEFT" INHERIT="$ANIM_PLAYER_RIGHT" FlipH="1" SoundEvent="player_engine"/>
+		
+		<Animation ID="$ANIM_PLAYER_LEFT_UP1" INHERIT="$ANIM_PLAYER_RIGHT_UP1" FlipH="0" SoundEvent="player_engine"/>
+
+		<Animation ID="$ANIM_PLAYER_LEFT_UP2" FPS="0" SoundEvent="player_engine">
+			<Frame X="137" Y="0" W="58" H="58"/>
+		</Animation>
+
+		<Animation ID="$ANIM_PLAYER_UP" FPS="0" SoundEvent="player_engine">
+			<Frame X="132" Y="59" W="61" H="65"/>
+		</Animation>
+		
+		<Animation ID="$ANIM_PLAYER_RIGHT_UP2" FPS="0" SoundEvent="player_engine">
+			<Frame X="137" Y="125" W="58" H="59"/>
+		</Animation>
+		
+		<Animation ID="$ANIM_PLAYER_RIGHT_UP1" FPS="0" FlipH="1" SoundEvent="player_engine">
+			<Frame X="65" Y="46" W="65" H="37"/>
+		</Animation>
+
+    <Animation ID="$ANIM_PLAYER_STALL1" FPS="20" Dir="1" Reverse="0" SoundEvent="player_stall">
+      <Frame X="198" Y="60" W="61" H="65"/> <!-- DOWN -->
+      <Frame X="204" Y="126" W="52" H="58"/> <!-- LEFT DOWN 2 -->
+      <Frame X="65" Y="0" W="61" H="46"/> <!-- LEFT DOWN 1 -->
+      <Frame X="0" Y="0" W="64" H="28" FlipH="1"/> <!-- LEFT -->
+      <Frame X="65" Y="46" W="65" H="37" FlipH="1"/> <!-- LEFT UP 1 -->
+      <Frame X="137" Y="0" W="58" H="59"/> <!-- LEFT UP 2 -->
+      <Frame X="132" Y="59" W="61" H="65"/> <!-- UP -->
+      <Frame X="137" Y="125" W="58" H="58"/> <!-- RIGHT UP 2 -->
+      <Frame X="65" Y="46" W="65" H="37"/> <!-- RIGHT UP 1 -->
+      <Frame X="0" Y="0" W="64" H="28"/> <!-- RIGHT -->
+      <Frame X="65" Y="0" W="61" H="46" FlipH="1"/> <!-- RIGHT DOWN 1 -->
+      <Frame X="196" Y="1" W="52" H="58"/> <!-- RIGHT DOWN 2 -->
+    </Animation>
+
+    <Animation ID="$ANIM_PLAYER_STALL2" FPS="12" SoundEvent="player_stall2">
+      <Frame X="198" Y="60" W="61" H="65"/>
+      <Frame X="0" Y="84" W="27" H="64"/>
+      <Frame X="70" Y="84" W="61" H="65"/>
+      <Frame X="28" Y="84" W="27" H="64"/>
+    </Animation>
+
+  </Graphic>
+	
+	<!-- ================================================================== -->
+
+	<Graphic Name="prop_plane_green" Layer="$RL_OBJECTS">
+		<Image Path="Data/Sprites2/prop_green.png" />
+
+		<Animation ID="$ANIM_AI_RIGHT" FlipH="1" FPS="6" Dir="1" Reverse="1">
+			<Frame X="0" Y="1"    W="58" H="17"/>
+			<Frame X="0" Y="19"   W="58" H="17"/>
+			<Frame X="0" Y="37"   W="58" H="17"/>
+		</Animation>
+
+		<Animation ID="$ANIM_AI_LEFT" INHERIT="$ANIM_AI_RIGHT" FlipH="0">
+		</Animation>
+
+		<Animation ID="$ANIM_AI_UP_RIGHT" FlipH="1" FPS="0" Dir="1" Reverse="0">
+			<Frame X="0" Y="1"    W="58" H="17"/>
+		</Animation>
+
+		<Animation ID="$ANIM_AI_DOWN_RIGHT" FlipH="1" FPS="0" Dir="1" Reverse="0">
+			<Frame X="0" Y="37"   W="58" H="17"/>
+		</Animation>
+
+		<Animation ID="$ANIM_AI_UP_LEFT" FlipH="0" FPS="0" Dir="1" Reverse="0">
+			<Frame X="0" Y="1"    W="58" H="17"/>
+		</Animation>
+
+		<Animation ID="$ANIM_AI_DOWN_LEFT" FlipH="0" FPS="0" Dir="1" Reverse="0">
+			<Frame X="0" Y="37"   W="58" H="17"/>
+		</Animation>
+
+	</Graphic>
+	
+	<!-- ================================================================== -->
+
+	<Graphic Name="jet_plane_yellow" Layer="$RL_OBJECTS">
+		<Image Path="Data/Sprites2/jet_yellow.png" />
+
+		<Animation ID="$ANIM_AI_RIGHT" FlipH="1" FPS="6" Dir="1" Reverse="1">
+			<Frame X="0" Y="0"  X2="51" H="22"/>
+			<Frame X="0" Y="23" X2="51" H="22"/>
+			<Frame X="0" Y="46" X2="51" H="22"/>
+		</Animation>
+
+		<Animation ID="$ANIM_AI_LEFT" INHERIT="$ANIM_AI_RIGHT" FlipH="0">
+		</Animation>
+
+		<Animation ID="$ANIM_AI_UP_RIGHT" FlipH="1" FPS="0" Dir="1" Reverse="0">
+			<Frame X="0" Y="0"  X2="51" H="22"/>
+		</Animation>
+
+		<Animation ID="$ANIM_AI_DOWN_RIGHT" FlipH="1" FPS="0" Dir="1" Reverse="0">
+			<Frame X="0" Y="46" X2="51"  H="22"/>
+		</Animation>
+
+		<Animation ID="$ANIM_AI_UP_LEFT" FlipH="0" FPS="0" Dir="1" Reverse="0">
+			<Frame X="0" Y="0"  X2="51" H="22"/>
+		</Animation>
+
+		<Animation ID="$ANIM_AI_DOWN_LEFT" FlipH="0" FPS="0" Dir="1" Reverse="0">
+			<Frame X="0" Y="46" X2="51"  H="22"/>
+		</Animation>
+
+	</Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="prop_plane_cyan" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/prop_cyan.png" />
+
+		<Animation ID="$ANIM_AI_RIGHT" FlipH="1" FPS="6" Dir="1" Reverse="1">
+			<Frame X="0" Y="1"    W="58" H="17"/>
+			<Frame X="0" Y="19"   W="58" H="17"/>
+			<Frame X="0" Y="37"   W="58" H="17"/>
+		</Animation>
+
+		<Animation ID="$ANIM_AI_LEFT" INHERIT="$ANIM_AI_RIGHT" FlipH="0">
+		</Animation>
+
+		<Animation ID="$ANIM_AI_UP_RIGHT" FlipH="1" FPS="0" Dir="1" Reverse="0">
+			<Frame X="0" Y="1"    W="58" H="17"/>
+		</Animation>
+
+		<Animation ID="$ANIM_AI_DOWN_RIGHT" FlipH="1" FPS="0" Dir="1" Reverse="0">
+			<Frame X="0" Y="37"   W="58" H="17"/>
+		</Animation>
+
+		<Animation ID="$ANIM_AI_UP_LEFT" FlipH="0" FPS="0" Dir="1" Reverse="0">
+			<Frame X="0" Y="1"    W="58" H="17"/>
+		</Animation>
+
+		<Animation ID="$ANIM_AI_DOWN_LEFT" FlipH="0" FPS="0" Dir="1" Reverse="0">
+			<Frame X="0" Y="37"   W="58" H="17"/>
+		</Animation>
+
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="jet_plane_purple" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/jet_purple.png" />
+
+    <Animation ID="$ANIM_AI_RIGHT" FlipH="1" FPS="6" Dir="1" Reverse="1">
+	    <Frame X="0" Y="0"  X2="51" H="22"/>
+	    <Frame X="0" Y="23" X2="51" H="22"/>
+	    <Frame X="0" Y="46" X2="51" H="22"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_LEFT" INHERIT="$ANIM_AI_RIGHT" FlipH="0">
+    </Animation>
+
+    <Animation ID="$ANIM_AI_UP_RIGHT" FlipH="1" FPS="0" Dir="1" Reverse="0">
+	    <Frame X="0" Y="0"  X2="51" H="22"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_DOWN_RIGHT" FlipH="1" FPS="0" Dir="1" Reverse="0">
+	    <Frame X="0" Y="46" X2="51" H="22"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_UP_LEFT" FlipH="0" FPS="0" Dir="1" Reverse="0">
+	    <Frame X="0" Y="0"  X2="51" H="22"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_DOWN_LEFT" FlipH="0" FPS="0" Dir="1" Reverse="0">
+        <Frame X="0" Y="46" X2="51" H="22"/>
+    </Animation>
+
+  </Graphic>
+
+  <!-- ================================================================== -->
+  
+  <Graphic Name="player_dead" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/player_dead.png" />
+
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="0" FlipH="0" FPS="6" Dir="1" Reverse="1" SoundEvent="explosion">
+      <Frame X="0" Y="0"    W="63" H="59"/>
+      <Frame X="0" Y="59"   W="63" H="66"/>
+      <Frame X="0" Y="125"  W="63" H="59"/>
+    </Animation>
+  </Graphic>
+  
+  <!-- ================================================================== -->
+
+	<Graphic Name="player_bullet" Layer="$RL_OBJECTS">
+		<Image Path="Data/Sprites2/player_bullet.png" />
+
+    <!--Caps ID="$GRAPH_CAPS_TRAIL"/-->
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+	</Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="player_bullet_hlw" INHERIT="player_bullet">
+    <Image Path="Data/Sprites2/player_bullet_hlw.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="player_bullet_xmas" INHERIT="player_bullet">
+    <Image Path="Data/Sprites2/player_bullet_xmas.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="player_bullet_ny" INHERIT="player_bullet">
+    <Image Path="Data/Sprites2/player_bullet_ny.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="player_bullet_stval" INHERIT="player_bullet">
+    <Image Path="Data/Sprites2/player_bullet_stval.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="victim_dead" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/victim_dead.png" />
+
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="0" FlipH="0" FPS="9" Dir="1" Reverse="0" SoundEvent="explosion">
+       <Frame X="0" Y="0"   X2="71" Y2="75"/>
+       <Frame X="0" Y="75"   X2="71" Y2="150"/>
+       <Frame X="0" Y="150"   X2="71" Y2="225"/>
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="enemy_dead" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/enemy_dead.png" />
+
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="0" FlipH="0" FPS="9" Dir="1" Reverse="0" SoundEvent="explosion">
+       <Frame X="0" Y="0"   X2="71" Y2="75"/>
+       <Frame X="0" Y="75"   X2="71" Y2="150"/>
+       <Frame X="0" Y="150"   X2="71" Y2="225"/>
+    </Animation>
+  </Graphic>
+  
+  <!-- ================================================================== -->
+
+  <Graphic Name="victim_prop_falling" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/plane_falling.png" />
+
+    <Caps ID="$GRAPH_CAPS_SPECIAL_FALLING"/>
+
+    <Animation ID="$ANIM_AI_DOWN_RIGHT" FlipH="0" FPS="8" Dir="1" Reverse="0">
+      <Frame X="0" Y="0"   X2="52" Y2="44"/>
+      <Frame X="0" Y="45"  X2="52" Y2="87"/>
+      <Frame X="0" Y="88"  X2="52" Y2="135"/>
+      <Frame X="0" Y="136" X2="52" Y2="181"/>
+    </Animation>
+    <Animation ID="$ANIM_AI_DOWN_LEFT" FlipV="1" INHERIT="$ANIM_AI_DOWN_RIGHT"/>
+    
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="victim_jet_falling" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/plane_falling.png" />
+
+    <Caps ID="$GRAPH_CAPS_SPECIAL_FALLING"/>
+
+    <Animation ID="$ANIM_AI_DOWN_RIGHT" FlipH="0" FPS="8" Dir="1" Reverse="0">
+      <Frame X="0" Y="0"   X2="52" Y2="44"/>
+      <Frame X="0" Y="45"  X2="52" Y2="87"/>
+      <Frame X="0" Y="88"  X2="52" Y2="135"/>
+      <Frame X="0" Y="136" X2="52" Y2="181"/>
+    </Animation>
+    <Animation ID="$ANIM_AI_DOWN_LEFT" FlipV="1" INHERIT="$ANIM_AI_DOWN_RIGHT"/>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="enemy_prop_falling" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/plane_falling.png" />
+
+    <Caps ID="$GRAPH_CAPS_SPECIAL_FALLING"/>
+
+    <Animation ID="$ANIM_AI_DOWN_RIGHT" FlipH="0" FPS="8" Dir="1" Reverse="0">
+      <Frame X="0" Y="0"   X2="52" Y2="44"/>
+      <Frame X="0" Y="45"  X2="52" Y2="87"/>
+      <Frame X="0" Y="88"  X2="52" Y2="135"/>
+      <Frame X="0" Y="136" X2="52" Y2="181"/>
+    </Animation>
+    <Animation ID="$ANIM_AI_DOWN_LEFT" FlipV="1" INHERIT="$ANIM_AI_DOWN_RIGHT"/>
+
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="enemy_jet_falling" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/plane_falling.png" />
+
+    <Caps ID="$GRAPH_CAPS_SPECIAL_FALLING"/>
+
+    <Animation ID="$ANIM_AI_DOWN_RIGHT" FlipH="0" FPS="8" Dir="1" Reverse="0">
+      <Frame X="0" Y="0"   X2="52" Y2="44"/>
+      <Frame X="0" Y="45"  X2="52" Y2="87"/>
+      <Frame X="0" Y="88"  X2="52" Y2="135"/>
+      <Frame X="0" Y="136" X2="52" Y2="181"/>
+    </Animation>
+    <Animation ID="$ANIM_AI_DOWN_LEFT" FlipV="1" INHERIT="$ANIM_AI_DOWN_RIGHT"/>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target_wave" Layer="$RL_TARGET">
+    <Image Path="Data/Sprites2/wave.png" />
+
+    <Animation ID="0" FPS="7" Dir="1" Reverse="0">
+	<Frame X="0" Y="0"   X2="900" Y2="118"/>
+	<Frame X="0" Y="118" X2="900" Y2="238"/>
+	<Frame X="0" Y="238" X2="900" Y2="354"/>
+	<Frame X="0" Y="354" X2="900" Y2="471"/>
+	<Frame X="0" Y="471" X2="900" Y2="588"/>
+	<Frame X="0" Y="588" X2="900" Y2="705"/>
+	<Frame X="0" Y="705" X2="900" Y2="822"/>
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target01" Layer="$RL_TARGET">
+    <Caps ID="$GRAPH_CAPS_CLONE"/>
+    <Image Path="Data/Sprites2/target01.png" />
+    <Bg Path="Data/Sprites2/target01_bg.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target02" Layer="$RL_TARGET">
+    <Caps ID="$GRAPH_CAPS_CLONE"/>
+    <Image Path="Data/Sprites2/target02.png" />
+    <Bg Path="Data/Sprites2/target02_bg.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target03" Layer="$RL_TARGET">
+    <Caps ID="$GRAPH_CAPS_CLONE"/>
+    <Image Path="Data/Sprites2/target03.png" />
+    <Bg Path="Data/Sprites2/target03_bg.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target04" Layer="$RL_TARGET">
+    <Caps ID="$GRAPH_CAPS_CLONE"/>
+    <Image Path="Data/Sprites2/target04.png" />
+    <Bg Path="Data/Sprites2/target04_bg.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target05" Layer="$RL_TARGET">
+    <Caps ID="$GRAPH_CAPS_CLONE"/>
+    <Image Path="Data/Sprites2/target05.png" />
+    <Bg Path="Data/Sprites2/target05_bg.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target06" Layer="$RL_TARGET">
+    <Caps ID="$GRAPH_CAPS_CLONE"/>
+    <Image Path="Data/Sprites2/target06.png" />
+    <Bg Path="Data/Sprites2/target06_bg.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target07" Layer="$RL_TARGET">
+    <Caps ID="$GRAPH_CAPS_CLONE"/>
+    <Image Path="Data/Sprites2/target07.png" />
+    <Bg Path="Data/Sprites2/target07_bg.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target08" Layer="$RL_TARGET">
+    <Caps ID="$GRAPH_CAPS_CLONE"/>
+    <Image Path="Data/Sprites2/target08.png" />
+    <Bg Path="Data/Sprites2/target08_bg.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target09" Layer="$RL_TARGET">
+    <Caps ID="$GRAPH_CAPS_CLONE"/>
+    <Image Path="Data/Sprites2/target09.png" />
+    <Bg Path="Data/Sprites2/target09_bg.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target10" Layer="$RL_TARGET">
+    <Caps ID="$GRAPH_CAPS_CLONE"/>
+    <Image Path="Data/Sprites2/target10.png" />
+    <Bg Path="Data/Sprites2/target10_bg.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target11" Layer="$RL_TARGET">
+    <Caps ID="$GRAPH_CAPS_CLONE"/>
+    <Image Path="Data/Sprites2/target11.png" />
+    <Bg Path="Data/Sprites2/target11_bg.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target12" Layer="$RL_TARGET">
+    <Caps ID="$GRAPH_CAPS_CLONE"/>
+    <Image Path="Data/Sprites2/target12.png" />
+    <Bg Path="Data/Sprites2/target12_bg.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target13" Layer="$RL_TARGET">
+    <Caps ID="$GRAPH_CAPS_CLONE"/>
+    <Image Path="Data/Sprites2/target13.png" />
+    <Bg Path="Data/Sprites2/target13_bg.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target14" Layer="$RL_TARGET">
+    <Caps ID="$GRAPH_CAPS_CLONE"/>
+    <Image Path="Data/Sprites2/target14.png" />
+    <Bg Path="Data/Sprites2/target14_bg.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target15" Layer="$RL_TARGET">
+    <Caps ID="$GRAPH_CAPS_CLONE"/>
+    <Image Path="Data/Sprites2/target15.png" />
+    <Bg Path="Data/Sprites2/target15_bg.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target16" Layer="$RL_TARGET">
+    <Caps ID="$GRAPH_CAPS_CLONE"/>
+    <Image Path="Data/Sprites2/target16.png" />
+    <Bg Path="Data/Sprites2/target16_bg.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target17" Layer="$RL_TARGET">
+    <Caps ID="$GRAPH_CAPS_CLONE"/>
+    <Image Path="Data/Sprites2/target17.png" />
+    <Bg Path="Data/Sprites2/target17_bg.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target18" Layer="$RL_TARGET">
+    <Caps ID="$GRAPH_CAPS_CLONE"/>
+    <Image Path="Data/Sprites2/target18.png" />
+    <Bg Path="Data/Sprites2/target18_bg.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target19" Layer="$RL_TARGET">
+    <Caps ID="$GRAPH_CAPS_CLONE"/>
+    <Image Path="Data/Sprites2/target19.png" />
+    <Bg Path="Data/Sprites2/target19_bg.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target20" Layer="$RL_TARGET">
+    <Caps ID="$GRAPH_CAPS_CLONE"/>
+    <Image Path="Data/Sprites2/target20.png" />
+    <Bg Path="Data/Sprites2/target20_bg.png" />
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="target21" Layer="$RL_TARGET">
+    <Caps ID="$GRAPH_CAPS_CLONE"/>
+    <Image Path="Data/Sprites2/target21.png" />
+    <Bg Path="Data/Sprites2/target21_bg.png" />
+  </Graphic>
+  
+  <!-- ================================================================== -->
+
+  <Graphic Name="explosion_on_target" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/enemy_dead.png" />
+
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="0" FlipH="0" FPS="9" Dir="1" Reverse="0" SoundEvent="explosion_target">
+       <Frame X="0" Y="0"   X2="71" Y2="75"/>
+       <Frame X="0" Y="75"   X2="71" Y2="150"/>
+       <Frame X="0" Y="150"   X2="71" Y2="225"/>
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="skymine" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/sky_mine.png" />
+
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="0" FlipH="0" FPS="4" Dir="1" Reverse="0">
+      <Frame X="0" Y="0"  W="56" H="18"/>
+      <Frame X="0" Y="19"  W="56" H="18"/>
+      <Frame X="0" Y="38"  W="56" H="18"/>
+      <Frame X="0" Y="57"  W="56" H="18"/>
+      <Frame X="0" Y="76"  W="56" H="18"/>
+      <Frame X="0" Y="95"  W="56" H="18"/>
+      <Frame X="0" Y="114"  W="56" H="18"/>
+      <Frame X="0" Y="133"  W="56" H="18"/>
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="copter_falling" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/copter.png" />
+
+    <Caps ID="$GRAPH_CAPS_SPECIAL_FALLING"/>
+  
+    <Animation ID="$ANIM_AI_DOWN_RIGHT" FlipH="0" FPS="4" Dir="1" Reverse="0" SoundEvent="explosion">
+      <Frame X="0" Y="0" W="72" H="20"/>
+      <Frame X="0" Y="20" W="72" H="20"/>
+      <Frame X="0" Y="40" W="72" H="20"/>
+      <Frame X="0" Y="60" W="72" H="20"/>
+    </Animation>
+    
+    <Animation ID="$ANIM_AI_DOWN_LEFT" FlipH="1" INHERIT="$ANIM_AI_DOWN_RIGHT">
+    </Animation>
+
+    <Animation ID="$ANIM_FLIP_RTL" FlipH="0" FPS="8" Dir="1" Reverse="0" OneShot="1">
+      <Frame X="0" Y="0" W="72" H="20"/>
+      <Frame X="72" Y="0" W="72" H="20"/>
+      <Frame X="72" Y="20" W="72" H="20"/>
+      <Frame X="72" Y="40" W="72" H="20"/>
+    </Animation>
+
+    <Animation ID="$ANIM_FLIP_LTR" FlipH="1" INHERIT="$ANIM_FLIP_RTL">
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="copter" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/copter.png" />
+
+    <Animation ID="$ANIM_AI_RIGHT" FlipH="0" FPS="4" Dir="1" Reverse="0">
+      <Frame X="0" Y="0" W="72" H="20"/>
+      <Frame X="0" Y="20" W="72" H="20"/>
+      <Frame X="0" Y="40" W="72" H="20"/>
+      <Frame X="0" Y="60" W="72" H="20"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_LEFT" FlipH="1" INHERIT="$ANIM_AI_RIGHT">
+    </Animation>
+
+    <Animation ID="$ANIM_FLIP_RTL" FlipH="0" FPS="4" Dir="1" Reverse="0" OneShot="1">
+      <Frame X="0" Y="0" W="72" H="20"/>
+      <Frame X="72" Y="0" W="72" H="20"/>
+      <Frame X="72" Y="20" W="72" H="20"/>
+      <Frame X="72" Y="40" W="72" H="20"/>
+    </Animation>
+
+    <Animation ID="$ANIM_FLIP_LTR" FlipH="1" INHERIT="$ANIM_FLIP_RTL">
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="dart" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/dart.png" />
+
+    <!--<Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>-->
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="$ANIM_AI_RIGHT" FlipH="0" FPS="4" Dir="1" Reverse="0">
+      <Frame X="0" Y="0"  W="46" H="14"/>
+      <Frame X="0" Y="15" W="46" H="14"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_LEFT" FlipH="1" INHERIT="$ANIM_AI_RIGHT">
+    </Animation>
+
+    <Animation ID="$ANIM_AI_DOWN_LEFT" INHERIT="$ANIM_AI_LEFT">
+    </Animation>
+
+    <Animation ID="$ANIM_AI_DOWN_RIGHT" INHERIT="$ANIM_AI_RIGHT">
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="two_seater" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/two_seater.png" />
+
+    <Animation ID="$ANIM_AI_RIGHT" FlipH="1" FPS="9" Dir="1" Reverse="1">
+      <Frame X="0" Y="0"   W="68" H="31"/>
+      <Frame X="0" Y="34"  W="68" H="31"/>
+      <Frame X="0" Y="69"  W="68" H="31"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_LEFT" INHERIT="$ANIM_AI_RIGHT" FlipH="0">
+    </Animation>
+
+    <Animation ID="$ANIM_AI_UP_RIGHT" FlipH="1" FPS="6" Dir="1" Reverse="0">
+      <Frame X="0"  Y="0"   W="68" H="31"/>
+      <Frame X="72" Y="0"   W="68" H="31"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_DOWN_RIGHT" FlipH="1" FPS="6" Dir="1" Reverse="0">
+      <Frame X="0"  Y="34"  W="68" H="31"/>
+      <Frame X="72" Y="69"  W="68" H="31"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_UP_LEFT" FlipH="0" FPS="6" Dir="1" Reverse="0">
+      <Frame X="0"  Y="0"   W="68" H="31"/>
+      <Frame X="72" Y="0"   W="68" H="31"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_DOWN_LEFT" FlipH="0" FPS="6" Dir="1" Reverse="0">
+      <Frame X="0"  Y="34"  W="68" H="31"/>
+      <Frame X="72" Y="69"  W="68" H="31"/>
+    </Animation>
+
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="two_seater_morph" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/two_seater.png" />
+
+    <Animation ID="$ANIM_AI_RIGHT" FlipH="1" FPS="9" Dir="1" Reverse="1">
+      <Frame X="0" Y="0"   W="68" H="31"/>
+      <Frame X="0" Y="103" W="68" H="31"/>
+      <Frame X="0" Y="69"  W="68" H="31"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_LEFT" INHERIT="$ANIM_AI_RIGHT" FlipH="0">
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="bomber" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/bomber.png" />
+
+    <Animation ID="$ANIM_AI_RIGHT" FlipH="1" FPS="6" Dir="1" Reverse="1">
+      <Frame X="0" Y="2"  W="72"  H="18"/>
+      <Frame X="0" Y="22" W="72"  H="18"/>
+      <Frame X="0" Y="42" W="72"  H="18"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_LEFT" INHERIT="$ANIM_AI_RIGHT" FlipH="0">
+    </Animation>
+
+    <Animation ID="$ANIM_AI_UP_RIGHT" FlipH="1" FPS="0" Dir="1" Reverse="0">
+      <Frame X="0" Y="2"  W="72"  H="18"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_DOWN_RIGHT" FlipH="1" FPS="0" Dir="1" Reverse="0">
+      <Frame X="0" Y="42" W="72" H="18"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_UP_LEFT" FlipH="0" FPS="0" Dir="1" Reverse="0">
+      <Frame X="0" Y="2"  W="72"  H="18"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_DOWN_LEFT" FlipH="0" FPS="0" Dir="1" Reverse="0">
+      <Frame X="0" Y="42" W="72" H="18"/>
+    </Animation>
+
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="bomber_falling" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/bomber.png" />
+
+    <Caps ID="$GRAPH_CAPS_SPECIAL_FALLING"/>
+
+    <!-- Never used because of GRAPH_CAPS_SPECIAL_FALLING
+    
+    <Animation ID="$ANIM_AI_UP_RIGHT" FlipH="1" FPS="0" Dir="1" Reverse="0">
+      <Frame X="0" Y="63" W="72" H="18"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_UP_LEFT" FlipH="0" FPS="0" Dir="1" Reverse="0">
+      <Frame X="0" Y="63" W="72" H="18"/>
+    </Animation>-->
+
+    <Animation ID="$ANIM_AI_DOWN_RIGHT" FlipH="0" FPS="4" Dir="1" Reverse="0">
+      <Frame X="0" Y="63" W="72" H="18"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_DOWN_LEFT" FlipH="1" INHERIT="$ANIM_AI_DOWN_RIGHT">
+    </Animation>
+
+    <Animation ID="$ANIM_FLIP_RTL" FlipH="0" FPS="4" Dir="1" Reverse="0" OneShot="1">
+      <Frame X="0" Y="63" W="72" H="18"/>
+      <Frame X="0" Y="82" W="72" H="18"/>
+    </Animation>
+
+    <Animation ID="$ANIM_FLIP_LTR" FlipH="1" INHERIT="$ANIM_FLIP_RTL">
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="enemy_bomb" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/enemy_bomb.png" />
+
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="$ANIM_AI_RIGHT" FlipH="1" FPS="0" Dir="1" Reverse="0">
+      <Frame X="0" Y="0" W="34" H="12"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_LEFT" FlipH="0" INHERIT="0">
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="bomb_explosion" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/bomb_explosion.png" />
+
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="0" FPS="8" Dir="1" Reverse="0">
+      <Frame X="0" Y="0" W="48" H="22"/>
+      <Frame X="0" Y="22" W="48" H="22"/>
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="player_bomb" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/player_bomb.png" />
+
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="$ANIM_AI_RIGHT" FlipH="1" FPS="0" Dir="1" Reverse="0">
+      <Frame X="0" Y="0" W="34" H="12"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_LEFT" FlipH="0" INHERIT="0">
+    </Animation>
+  </Graphic>
+  
+  <!-- ================================================================== -->
+
+  <Graphic Name="ufo_spawn" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/ufo.png" />
+
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="0" FlipH="0" FPS="10" Dir="1" Reverse="0" OneShot="1">
+      <Frame X="132" Y="76" X2="179" Y2="97"/>
+      <Frame X="132" Y="52" X2="179" Y2="75"/>
+      <Frame X="132" Y="22" X2="179" Y2="51"/>
+      <Frame X="132" Y="0"  X2="179" Y2="21"/>
+      <Frame X="0" Y="0"  X2="63" Y2="22"/>
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="ufo" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/ufo.png" />
+
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="0" FlipH="0" FPS="6" Dir="1" Reverse="0">
+      <Frame X="0" Y="0"   X2="63" Y2="21"/>
+      <Frame X="0" Y="22"  X2="63" Y2="43"/>
+      <Frame X="0" Y="44"  X2="63" Y2="65"/>
+      <Frame X="0" Y="66"  X2="63" Y2="87"/>
+      <Frame X="0" Y="88"  X2="63" Y2="109"/>
+      <Frame X="0" Y="110" X2="63" Y2="131"/>
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->  
+
+  <Graphic Name="ufo_despawn" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/ufo.png" />
+
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="0" FlipH="0" FPS="10" Dir="1" Reverse="0" OneShot="1">
+      <Frame X="0" Y="0"  X2="63" Y2="21"/>
+      <Frame X="132" Y="0"  X2="179" Y2="21"/>
+      <Frame X="132" Y="22" X2="179" Y2="51"/>
+      <Frame X="132" Y="53" X2="179" Y2="78"/>
+      <Frame X="132" Y="81" X2="179" Y2="97"/>
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="ufo_death" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/ufo.png" />
+
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="0" FlipH="0" FPS="9" Dir="1" Reverse="0" OneShot="1" SoundEvent="explosion">
+      <Frame X="70" Y="54" X2="117" Y2="72"/>
+      <Frame X="70" Y="34" X2="117" Y2="52"/>
+      <Frame X="70" Y="0"  X2="117" Y2="33"/>
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+  
+  <Graphic Name="ufo_dead" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/ufo.png" />
+
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="0" FlipH="0" FPS="0" Dir="1" Reverse="0">
+      <Frame X="70" Y="0"  X2="117" Y2="33"/>
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="hyperjet_slow" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/hyperjet.png" />
+
+    <Animation ID="$ANIM_AI_LEFT" FlipH="0" FPS="4" Dir="1" Reverse="1">
+      <Frame X="79" Y="0"   X2="175"  Y2="38"/>
+	    <Frame X="79" Y="41"   X2="175" Y2="79"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_RIGHT" INHERIT="$ANIM_AI_LEFT" FlipH="1">
+    </Animation>
+
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="hyperjet_stop" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/hyperjet.png" />
+
+    <Animation ID="$ANIM_AI_LEFT" FlipH="0" FPS="30" Dir="1" Reverse="1" OneShot="1">
+	<Frame X="0" Y="170"  W="79" H="39"/>
+	<Frame X="0" Y="170"  W="79" H="39"/>
+	<Frame X="0" Y="170"  W="79" H="39"/>
+	<Frame X="0" Y="127"  W="79" H="41"/>
+	<Frame X="0" Y="127"  W="79" H="41"/>
+	<Frame X="0" Y="127"  W="79" H="41"/>
+	<Frame X="0" Y="84"   W="79" H="41"/>
+	<Frame X="0" Y="84"   W="79" H="41"/>
+	<Frame X="0" Y="84"   W="79" H="41"/>
+	<Frame X="0" Y="41"   W="79" H="41"/>
+	<Frame X="0" Y="41"   W="79" H="41"/>
+	<Frame X="0" Y="41"   W="79" H="41"/>
+	<Frame X="0" Y="0"    W="79" H="39"/>
+	<Frame X="0" Y="0"    W="79" H="39"/>
+	<Frame X="0" Y="0"    W="79" H="39"/>
+	<Frame X="0" Y="0"    W="79" H="39"/>
+	<Frame X="0" Y="0"    W="79" H="39"/>
+	<Frame X="0" Y="0"    W="79" H="39"/>
+	<Frame X="0" Y="41"   W="79" H="41"/>
+	<Frame X="0" Y="41"   W="79" H="41"/>
+	<Frame X="0" Y="41"   W="79" H="41"/>
+	<Frame X="0" Y="84"   W="79" H="41"/>
+	<Frame X="0" Y="84"   W="79" H="41"/>
+	<Frame X="0" Y="84"   W="79" H="41"/>
+	<Frame X="0" Y="127"  W="79" H="41"/>
+	<Frame X="0" Y="127"  W="79" H="41"/>
+	<Frame X="0" Y="127"  W="79" H="41"/>
+	<Frame X="0" Y="170"  W="79" H="39"/>
+	<Frame X="0" Y="170"  W="79" H="39"/>
+	<Frame X="0" Y="170"  W="79" H="39"/>
+
+	<Frame X="0" Y="170"  W="79" H="39"/>
+	<Frame X="0" Y="170"  W="79" H="39"/>
+	<Frame X="0" Y="127"  W="79" H="41"/>
+	<Frame X="0" Y="127"  W="79" H="41"/>
+	<Frame X="0" Y="84"   W="79" H="41"/>
+	<Frame X="0" Y="84"   W="79" H="41"/>
+	<Frame X="0" Y="41"   W="79" H="41"/>
+	<Frame X="0" Y="41"   W="79" H="41"/>
+	<Frame X="0" Y="0"    W="79" H="39"/>
+	<Frame X="0" Y="0"    W="79" H="39"/>
+	<Frame X="0" Y="0"    W="79" H="39"/>
+	<Frame X="0" Y="0"    W="79" H="39"/>
+	<Frame X="0" Y="41"   W="79" H="41"/>
+	<Frame X="0" Y="41"   W="79" H="41"/>
+	<Frame X="0" Y="84"   W="79" H="41"/>
+	<Frame X="0" Y="84"   W="79" H="41"/>
+	<Frame X="0" Y="127"  W="79" H="41"/>
+	<Frame X="0" Y="127"  W="79" H="41"/>
+	<Frame X="0" Y="170"  W="79" H="39"/>
+	<Frame X="0" Y="170"  W="79" H="39"/>
+
+	<Frame X="0" Y="170"  W="79" H="39"/>
+	<Frame X="0" Y="127"  W="79" H="41"/>
+	<Frame X="0" Y="84"   W="79" H="41"/>
+	<Frame X="0" Y="41"   W="79" H="41"/>
+	<Frame X="0" Y="0"    W="79" H="39"/>
+	<Frame X="0" Y="0"    W="79" H="39"/>
+	<Frame X="0" Y="41"   W="79" H="41"/>
+	<Frame X="0" Y="84"   W="79" H="41"/>
+	<Frame X="0" Y="127"  W="79" H="41"/>
+	<Frame X="0" Y="170"  W="79" H="39"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_RIGHT" INHERIT="$ANIM_AI_LEFT" FlipH="1">
+    </Animation>
+
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="hyperjet_fast" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/hyperjet.png" />
+
+    <Animation ID="$ANIM_AI_LEFT" FlipH="0" FPS="8" Dir="1" Reverse="1">
+	<Frame X="79" Y="0"   X2="175" Y2="39"/>
+	<Frame X="79" Y="39"   X2="175" Y2="79"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_RIGHT" INHERIT="$ANIM_AI_LEFT" FlipH="1">
+    </Animation>
+
+  </Graphic>
+  
+  <!-- ================================================================== -->
+
+  <Graphic Name="hyperjet_dead" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/hyperjet.png" />
+
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="0" FlipH="0" FPS="4" Dir="1" Reverse="0" SoundEvent="explosion">
+      <Frame X="80" Y="82"   W="51" H="65"/>
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="paranoia_white" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/paranoia_white.png" />
+
+    <Animation ID="$ANIM_AI_RIGHT" FPS="6" Dir="1" Reverse="1">
+      <Frame X="0" Y="0"  W="66" H="27"/>
+      <Frame X="0" Y="28" W="66" H="27"/>
+      <Frame X="0" Y="56" W="66" H="27"/>
+    </Animation>
+    
+    <Animation ID="$ANIM_AI_LEFT" FlipH="1" INHERIT="$ANIM_AI_RIGHT"/>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="paranoia_white_dead" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/paranoia_white.png" />
+
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="0" FPS="6" Dir="1" Reverse="1" SoundEvent="explosion">
+      <Frame X="65" Y="0"   W="63" H="59"/>
+      <Frame X="65" Y="59"  W="63" H="66"/>
+      <Frame X="65" Y="125" W="63" H="59"/>
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="paranoia_red" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/paranoia_red.png" />
+
+    <Animation ID="$ANIM_AI_RIGHT" FPS="6" Dir="1" Reverse="1">
+      <Frame X="0" Y="0"  W="66" H="27"/>
+      <Frame X="0" Y="28" W="66" H="27"/>
+      <Frame X="0" Y="56" W="66" H="27"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_LEFT" FlipH="1" INHERIT="$ANIM_AI_RIGHT"/>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="paranoia_red_dead" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/paranoia_red.png" />
+
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="0" FPS="6" Dir="1" Reverse="1" SoundEvent="explosion">
+      <Frame X="65" Y="0"   W="63" H="59"/>
+      <Frame X="65" Y="59"  W="63" H="66"/>
+      <Frame X="65" Y="125" W="63" H="59"/>
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="shuttle" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/shuttle.png" />
+
+    <Animation ID="$ANIM_AI_RIGHT" FlipH="1" FPS="6" Dir="1" Reverse="1">
+      <Frame X="0" Y="0"    X2="61" Y2="33"/>
+      <Frame X="0" Y="35"   X2="64" Y2="69"/>
+      <Frame X="0" Y="71"   X2="58" Y2="106"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_LEFT" INHERIT="$ANIM_AI_RIGHT" FlipH="0">
+    </Animation>
+
+    <Animation ID="$ANIM_AI_UP_RIGHT" FlipH="1" FPS="0" Dir="1" Reverse="0">
+      <Frame X="0" Y="0"   X2="61" Y2="33"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_DOWN_RIGHT" FlipH="1" FPS="0" Dir="1" Reverse="0">
+      <Frame X="0" Y="71"   X2="58" Y2="106"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_UP_LEFT" FlipH="0" FPS="0" Dir="1" Reverse="0">
+      <Frame X="0" Y="0"   X2="61" Y2="33"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_DOWN_LEFT" FlipH="0" FPS="0" Dir="1" Reverse="0">
+      <Frame X="0" Y="71"   X2="58" Y2="106"/>
+    </Animation>
+
+    <Animation ID="$ANIM_FLIP_RTL" FlipH="0" FPS="4" Dir="1" Reverse="0" OneShot="1">
+      <Frame X="0"  Y="0"   X2="61" Y2="33" FlipH="1"/>
+      <Frame X="67" Y="33" W="35" H="34" FlipH="1"/>
+      <Frame X="67" Y="33" W="35" H="34" FlipH="0"/>
+      <Frame X="0"  Y="0"   X2="61" Y2="33" FlipH="0"/>
+    </Animation>
+
+    <Animation ID="$ANIM_FLIP_LTR" FlipH="0" FPS="4" Dir="1" Reverse="0" OneShot="1">
+      <Frame X="0"  Y="0"   X2="61" Y2="33" FlipH="0"/>
+      <Frame X="67" Y="33"  W="35" H="34" FlipH="0"/>
+      <Frame X="67" Y="33"  W="35" H="34" FlipH="1"/>
+      <Frame X="0"  Y="0"   X2="61" Y2="33" FlipH="1"/>
+    </Animation>
+
+  </Graphic>
+  
+  <!-- ================================================================== -->
+
+  <Graphic Name="shuttle_dead" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/shuttle.png" />
+
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="0" FlipH="0" FPS="4" Dir="1" Reverse="0">
+      <Frame X="0" Y="0"   X2="61" Y2="33" FlipH="1"/>
+      <Frame X="67" Y="33" W="35" H="34" FlipH="1"/>
+      <Frame X="67" Y="33" W="35" H="34" FlipH="0"/>
+      <Frame X="0" Y="0"   X2="61" Y2="33" FlipH="0"/>
+      <Frame X="0" Y="0"   X2="61" Y2="33" FlipH="0"/>
+      <Frame X="67" Y="33" W="35" H="34" FlipH="0"/>
+      <Frame X="67" Y="33" W="35" H="34" FlipH="1"/>
+      <Frame X="0" Y="0"   X2="61" Y2="33" FlipH="1"/>
+    </Animation>
+
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="satellite" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/satellite.png" />
+
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="0" FlipH="0" FPS="6" Dir="1" Reverse="0">
+      <Frame X="0" Y="0"   X2="49" Y2="21"  FlipH="0"/>
+      <Frame X="0" Y="22"  X2="49" Y2="43"  FlipH="0"/>
+      <Frame X="0" Y="44"  X2="49" Y2="65"  FlipH="0"/>
+      <Frame X="0" Y="66"  X2="49" Y2="87"  FlipH="0"/>
+      <Frame X="0" Y="88"  X2="49" Y2="109" FlipH="0"/>
+      <Frame X="0" Y="110" X2="49" Y2="131" FlipH="0"/>
+      <Frame X="0" Y="132" X2="49" Y2="153" FlipH="0"/>
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="satellite_deploy" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/satellite.png" />
+
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="0" FlipH="0" FPS="6" Dir="1" Reverse="0">
+      <Frame X="0" Y="0"   X2="49" Y2="21"  FlipH="0"/>
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="spacejet" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/spacejet.png" />
+
+    <Animation ID="$ANIM_AI_RIGHT" FlipH="1" FPS="6" Dir="1" Reverse="1">
+      <Frame X="0" Y="0"   X2="60" Y2="25"/>
+      <Frame X="0" Y="26"  X2="60" Y2="51"/>
+      <Frame X="0" Y="52"  X2="60" Y2="77"/>
+    </Animation>
+
+    <Animation ID="$ANIM_AI_LEFT" INHERIT="$ANIM_AI_RIGHT" FlipH="0">
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="spacejet_dead" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/spacejet.png" />
+    
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="0" FPS="8" Dir="1">
+      <Frame X="61" Y="27" W="27" H="28"/>
+      <Frame X="61" Y="27" W="27" H="28" FlipH="1"/>
+    </Animation>
+
+    <Animation ID="$ANIM_FLIP_LTR" FPS="1" Dir="1">
+      <Frame X="61" Y="27" W="27" H="28"/>
+    </Animation>
+
+    <Animation ID="$ANIM_FLIP_RTL" FPS="1" Dir="1">
+      <Frame X="61" Y="27" W="27" H="28" FlipH="1"/>
+    </Animation>    
+
+  </Graphic>
+
+  <!-- ================================================================== -->
+
+  <Graphic Name="final_explosion" Layer="$RL_OBJECTS">
+    <Image Path="Data/Sprites2/enemy_dead.png" />
+
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANIMS"/>
+    <Caps ID="$GRAPH_CAPS_INDEPENDENT_ANGLE"/>
+
+    <Animation ID="0" FlipH="0" FPS="9" Dir="1" Reverse="0" SoundEvent="explosion">
+      <Frame X="0" Y="0"   X2="71" Y2="75"/>
+      <Frame X="0" Y="75"   X2="71" Y2="150"/>
+      <Frame X="0" Y="150"   X2="71" Y2="225"/>
+    </Animation>
+  </Graphic>
+
+  <!-- ================================================================== -->
+  
+</Graphics>

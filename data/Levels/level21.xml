@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Level Name="21 THE FINAL CONFLICT" TargetObject="target21" TX="0" TY="-50" SinkLineY="264" SinkPercent="50" MaxObjects="30">
+
+<Briefing>
+		<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level21_1.txt"/>
+		<Phrase Image="Data/Sprites2/player.png" Text="Data/Texts/level21_2.txt"/>
+		<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level21_3.txt"/>
+		<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level21_4.txt"/>
+    		<Phrase Image="Data/Sprites2/player.png" Text="Data/Texts/level21_5.txt"/>
+</Briefing>
+
+<PlayByPlay>
+		<Phrase Image="Data/Sprites2/question.png" Text="Data/Texts/level21_pbp1.txt" Percent="10"/>
+		<Phrase Image="Data/Sprites2/question.png" Text="Data/Texts/level21_pbp2.txt" Percent="40"/>
+		<Phrase Image="Data/Sprites2/control.png" Text="Data/Texts/level21_pbp3.txt" Percent="80"/>
+</PlayByPlay>
+
+  <AI Object="spacejet" Cooldown="0.5">
+    <Interval Region="LEFT" Dir="RIGHT">
+      <Scheme Name="straight" Weight="1"/>
+    </Interval>
+    <Interval Region="RIGHT" Dir="LEFT">
+      <Scheme Name="straight" Weight="1"/>
+    </Interval>
+  </AI>
+
+  <AI Object="shuttle" Cooldown="5">
+    <Interval Region="LEFT" Dir="RIGHT">
+      <Scheme Name="shuttle" Weight="2"/>
+    </Interval>
+
+    <Interval Region="RIGHT" Dir="LEFT">
+      <Scheme Name="shuttle" Weight="2"/>
+    </Interval>
+
+    <Interval Region="TOP_NARROW" Dir="RIGHT">
+      <Scheme Name="shuttle" Weight="1"/>
+    </Interval>
+
+    <Interval Region="TOP_NARROW" Dir="LEFT">
+      <Scheme Name="shuttle" Weight="1"/>
+    </Interval>
+  </AI>
+
+  <AI Object="satellite" Cooldown="50">
+    <Interval Region="LEFT" Dir="RIGHT">
+      <Scheme Name="satellite" Weight="1"/>
+    </Interval>
+
+    <Interval Region="RIGHT" Dir="LEFT">
+      <Scheme Name="satellite" Weight="1"/>
+    </Interval>
+
+    <Interval Region="TOP" Dir="RIGHT">
+      <Scheme Name="satellite" Weight="1"/>
+    </Interval>
+
+    <Interval Region="TOP" Dir="LEFT">
+      <Scheme Name="satellite" Weight="1"/>
+    </Interval>
+
+    <Interval Region="INNER" Dir="RIGHT">
+      <Scheme Name="satellite" Weight="1"/>
+    </Interval>
+
+    <Interval Region="INNER" Dir="LEFT">
+      <Scheme Name="satellite" Weight="1"/>
+    </Interval>
+  </AI>
+
+  <AI Object="ufo_spawn" Cooldown="40">
+    <Interval Region="INNER" Dir="LEFT">
+      <Scheme Name="ufo_spawn" Weight="1"/>
+    </Interval>
+  </AI>
+
+  <AI Object="hyperjet_slow" Cooldown="70">
+    <Interval Region="LEFT" Dir="RIGHT">
+      <Scheme Name="hyperjet_slow" Weight="1"/>
+    </Interval>
+    <Interval Region="RIGHT" Dir="LEFT">
+      <Scheme Name="hyperjet_slow" Weight="1"/>
+    </Interval>
+  </AI>
+
+  <AI Object="dart" Cooldown="500">
+    <Interval Region="LEFT" Dir="RIGHT">
+      <Scheme Name="straight_accel" Weight="1"/>
+    </Interval>
+    <Interval Region="RIGHT" Dir="LEFT">
+      <Scheme Name="straight_accel" Weight="1"/>
+    </Interval>
+  </AI>
+
+  <SkyController Percent="1.0">
+  <SkyKeyPoint Time="0.0" TopR="0" TopG="0" TopB="0" BotR="0" BotG="10" BotB="50"/>
+
+	<StarsKeyPoint Time="0.0" Visible="1" Transparency="1.0"/>
+	<!--StarsKeyPoint Time="1.0" Visible="1" Transparency="0.0"/-->
+
+	<AstroKeyPoint Time="0.0"  SunR="0"    SunG="0"    SunB="0"    MoonR="200" MoonG="200" MoonB="200" />
+	<AstroKeyPoint Time="0.25" SunR="200"  SunG="200"  SunB="50"   MoonR="200" MoonG="200" MoonB="200"  />
+	<AstroKeyPoint Time="0.5"  SunR="200"  SunG="200"  SunB="50"   MoonR="0"   MoonG="0"   MoonB="0"   />
+	<AstroKeyPoint Time="0.75" SunR="200"  SunG="200"  SunB="50"   MoonR="200" MoonG="200" MoonB="200"  />
+</SkyController>
+
+</Level>

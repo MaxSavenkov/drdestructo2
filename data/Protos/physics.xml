@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Physics>
+
+	<!-- ================================================================== -->
+	
+	<Physic Name="player_plane" MinSpeed="200" MaxSpeed="400" TurnSpeed="4" Accel="1000">
+		<Caps ID="$PHYS_CAPS_FOLLOW_ANGLE"/>
+
+		<Collision Layer="$COLLISIONS_PLAYER">
+			<Sphere DX="15" DY="0" Radius="10"/>
+      <Sphere DX="0" DY="0" Radius="5"/>
+			<Sphere DX="-15" DY="0" Radius="5"/>
+		</Collision>
+	</Physic>
+
+	<!-- ================================================================== -->
+	
+	<Physic Name="prop_plane" MinSpeed="100" MaxSpeed="200" VerticalSpeed="50">
+		<Collision Layer="$COLLISIONS_ENEMY_HARMLESS">
+			<Sphere DX="15" DY="0" Radius="10"/>
+			<Sphere DX="0" DY="0" Radius="7"/>
+			<Sphere DX="-15" DY="0" Radius="10"/>
+		</Collision>
+	</Physic>
+
+	<!-- ================================================================== -->
+	
+	<Physic Name="jet_plane" MinSpeed="200" MaxSpeed="300" VerticalSpeed="100">
+		<Collision Layer="$COLLISIONS_ENEMY_HARMLESS">
+			<Sphere DX="15" DY="0" Radius="10"/>
+			<Sphere DX="0" DY="0" Radius="7"/>
+			<Sphere DX="-15" DY="0" Radius="10"/>
+		</Collision>
+	</Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="prop_plane_enemy" MinSpeed="100" MaxSpeed="200" VerticalSpeed="50">
+    <Collision Layer="$COLLISIONS_ENEMY">
+      <Sphere DX="15" DY="0" Radius="10"/>
+      <Sphere DX="0" DY="0" Radius="7"/>
+      <Sphere DX="-15" DY="0" Radius="10"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="jet_plane_enemy" MinSpeed="200" MaxSpeed="300" VerticalSpeed="100">
+    <Collision Layer="$COLLISIONS_ENEMY">
+      <Sphere DX="15" DY="0" Radius="10"/>
+      <Sphere DX="0" DY="0" Radius="7"/>
+      <Sphere DX="-15" DY="0" Radius="10"/>
+    </Collision>
+  </Physic>  
+
+	<!-- ================================================================== -->
+
+	<Physic Name="player_bullet" MinSpeed="700" MaxSpeed="700">
+		<Caps ID="$PHYS_CAPS_FOLLOW_ANGLE"/> 
+
+		<Collision Layer="$COLLISIONS_PLAYER_BULLET">
+			<Sphere DX="0" DY="0" Radius="2"/>
+		</Collision>
+	</Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="player_bullet_hlw" INHERIT="player_bullet">
+    <Caps ID="$PHYS_CAPS_FOLLOW_ANGLE"/>
+
+    <Collision Layer="$COLLISIONS_PLAYER_BULLET">
+      <Sphere DX="0" DY="0" Radius="2"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="player_bullet_xmas" INHERIT="player_bullet">
+    <Caps ID="$PHYS_CAPS_FOLLOW_ANGLE"/>
+
+    <Collision Layer="$COLLISIONS_PLAYER_BULLET">
+      <Sphere DX="0" DY="0" Radius="2"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="player_bullet_ny" INHERIT="player_bullet">
+    <Caps ID="$PHYS_CAPS_FOLLOW_ANGLE"/>
+
+    <Collision Layer="$COLLISIONS_PLAYER_BULLET">
+      <Sphere DX="0" DY="0" Radius="2"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="player_bullet_stval" INHERIT="player_bullet">
+    <Caps ID="$PHYS_CAPS_FOLLOW_ANGLE"/>
+
+    <Collision Layer="$COLLISIONS_PLAYER_BULLET">
+      <Sphere DX="0" DY="0" Radius="2"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="player_dead" MinSpeed="200" MaxSpeed="200">
+    <Caps ID="$PHYS_CAPS_FALLING"/>
+    <Collision Layer="$COLLISIONS_PLAYER_SHOT_DOWN"/>
+  </Physic>
+
+	<!-- ================================================================== -->
+
+	<Physic Name="victim_dead" MinSpeed="200" MaxSpeed="200">
+	</Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="enemy_dead" MinSpeed="200" MaxSpeed="200">
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="plane_falling" MinSpeed="200" MaxSpeed="200">
+    <Caps ID="$PHYS_CAPS_FALLING"/>
+    <Collision Layer="$COLLISIONS_ENEMY_HARMLESS_SHOT_DOWN"/>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="target01" MinSpeed="0" MaxSpeed="0">
+    <Collision Layer="$COLLISIONS_TARGET">
+      <Mask File="Data/Sprites2/target01_mask.png"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="target02" MinSpeed="0" MaxSpeed="0">
+    <Collision Layer="$COLLISIONS_TARGET">
+      <Mask File="Data/Sprites2/target02_mask.png"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="target03" MinSpeed="0" MaxSpeed="0">
+    <Collision Layer="$COLLISIONS_TARGET">
+      <Mask File="Data/Sprites2/target03_mask.png"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="target04" MinSpeed="0" MaxSpeed="0">
+    <Collision Layer="$COLLISIONS_TARGET">
+      <Mask File="Data/Sprites2/target04_mask.png"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="target05" MinSpeed="0" MaxSpeed="0">
+    <Collision Layer="$COLLISIONS_TARGET">
+      <Mask File="Data/Sprites2/target05_mask.png"/>
+    </Collision>
+  </Physic>
+  
+  <!-- ================================================================== -->
+
+  <Physic Name="target06" MinSpeed="0" MaxSpeed="0">
+    <Collision Layer="$COLLISIONS_TARGET">
+      <Mask File="Data/Sprites2/target06_mask.png"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="target07" MinSpeed="0" MaxSpeed="0">
+    <Collision Layer="$COLLISIONS_TARGET">
+      <Mask File="Data/Sprites2/target07_mask.png"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="target08" MinSpeed="0" MaxSpeed="0">
+    <Collision Layer="$COLLISIONS_TARGET">
+      <Mask File="Data/Sprites2/target08_mask.png"/>
+    </Collision>
+  </Physic>  
+
+  <!-- ================================================================== -->
+
+  <Physic Name="target09" MinSpeed="0" MaxSpeed="0">
+    <Collision Layer="$COLLISIONS_TARGET">
+      <Mask File="Data/Sprites2/target09_mask.png"/>
+    </Collision>
+  </Physic>  
+  
+  <!-- ================================================================== -->
+
+  <Physic Name="target10" MinSpeed="0" MaxSpeed="0">
+    <Collision Layer="$COLLISIONS_TARGET">
+      <Mask File="Data/Sprites2/target10_mask.png"/>
+    </Collision>
+  </Physic>  
+  
+  <!-- ================================================================== -->
+
+  <Physic Name="target11" MinSpeed="0" MaxSpeed="0">
+    <Collision Layer="$COLLISIONS_TARGET">
+      <Mask File="Data/Sprites2/target11_mask.png"/>
+    </Collision>
+  </Physic>  
+  
+  <!-- ================================================================== -->
+
+  <Physic Name="target12" MinSpeed="0" MaxSpeed="0">
+    <Collision Layer="$COLLISIONS_TARGET">
+      <Mask File="Data/Sprites2/target12_mask.png"/>
+    </Collision>
+  </Physic>  
+
+  <!-- ================================================================== -->
+
+  <Physic Name="target13" MinSpeed="0" MaxSpeed="0">
+    <Collision Layer="$COLLISIONS_TARGET">
+      <Mask File="Data/Sprites2/target13_mask.png"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="target14" MinSpeed="0" MaxSpeed="0">
+    <Collision Layer="$COLLISIONS_TARGET">
+      <Mask File="Data/Sprites2/target14_mask.png"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="target15" MinSpeed="0" MaxSpeed="0">
+    <Collision Layer="$COLLISIONS_TARGET">
+      <Mask File="Data/Sprites2/target15_mask.png"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="target16" MinSpeed="0" MaxSpeed="0">
+    <Collision Layer="$COLLISIONS_TARGET">
+      <Mask File="Data/Sprites2/target16_mask.png"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="target17" MinSpeed="0" MaxSpeed="0">
+    <Collision Layer="$COLLISIONS_TARGET">
+      <Mask File="Data/Sprites2/target17_mask.png"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="target18" MinSpeed="0" MaxSpeed="0">
+    <Collision Layer="$COLLISIONS_TARGET">
+      <Mask File="Data/Sprites2/target18_mask.png"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="target19" MinSpeed="0" MaxSpeed="0">
+    <Collision Layer="$COLLISIONS_TARGET">
+      <Mask File="Data/Sprites2/target19_mask.png"/>
+    </Collision>
+  </Physic>
+  
+  <!-- ================================================================== -->
+
+  <Physic Name="target20" MinSpeed="0" MaxSpeed="0">
+    <Collision Layer="$COLLISIONS_TARGET">
+      <Mask File="Data/Sprites2/target20_mask.png"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="target21" MinSpeed="0" MaxSpeed="0">
+    <Collision Layer="$COLLISIONS_TARGET">
+      <Mask File="Data/Sprites2/target21_mask.png"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="explosion_on_target" MinSpeed="0" MaxSpeed="0">
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="skymine" MinSpeed="0" MaxSpeed="300" VerticalSpeed="100">
+    <Collision Layer="$COLLISIONS_ENEMY_INVUL">
+      <Sphere DX="17" DY="0" Radius="10"/>
+      <Sphere DX="0" DY="0" Radius="9"/>
+      <Sphere DX="-17" DY="0" Radius="10"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="copter" MinSpeed="300" MaxSpeed="400" VerticalSpeed="150" FlipTimer="1.0">
+    <Collision Layer="$COLLISIONS_ENEMY">
+      <Sphere DX="22" DY="4" Radius="9"/>
+      <Sphere DX="5" DY="0" Radius="11"/>
+      <Sphere DX="-15" DY="0" Radius="9"/>
+      <Sphere DX="-30" DY="0" Radius="7"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="dart" MinSpeed="0" MaxSpeed="400" VerticalSpeed="50" Accel="1000">
+    <Collision Layer="$COLLISIONS_ENEMY_INVUL">
+      <Sphere DX="13" DY="0" Radius="9"/>
+      <Sphere DX="0" DY="0" Radius="9"/>
+      <Sphere DX="-10" DY="0" Radius="9"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+  
+  <Physic Name="copter_falling" MinSpeed="300" MaxSpeed="300" VerticalSpeed="100" FlipTimer="0.3">
+    <Caps ID="$PHYS_CAPS_FALLING"/>
+    <Collision Layer="$COLLISIONS_ENEMY_SHOT_DOWN">
+      <Sphere DX="22" DY="4" Radius="9"/>
+      <Sphere DX="5" DY="0" Radius="11"/>
+      <Sphere DX="-15" DY="0" Radius="9"/>
+      <Sphere DX="-30" DY="0" Radius="7"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="two_seater" MinSpeed="200" MaxSpeed="300" VerticalSpeed="100">
+    <Collision Layer="$COLLISIONS_ENEMY_HARMLESS">
+      <Sphere DX="15" DY="0" Radius="10"/>
+      <Sphere DX="0" DY="0" Radius="7"/>
+      <Sphere DX="-12" DY="0" Radius="5"/>
+      <Sphere DX="-25" DY="0" Radius="5"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="bomber" MinSpeed="150" MaxSpeed="250" VerticalSpeed="75">
+    <Collision Layer="$COLLISIONS_ENEMY">
+      <Sphere DX="29" DY="3" Radius="7"/>
+      <Sphere DX="15" DY="0" Radius="8"/>
+      <Sphere DX="0" DY="0" Radius="8"/>
+      <Sphere DX="-12" DY="3" Radius="6"/>
+      <Sphere DX="-27" DY="0" Radius="8"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="bomber_falling" MinSpeed="400" MaxSpeed="400" VerticalSpeed="300" FlipTimer="0.10">
+    <Caps ID="$PHYS_CAPS_FALLING"/>
+    <Collision Layer="$COLLISIONS_ENEMY_SHOT_DOWN">
+      <Sphere DX="29" DY="3" Radius="7"/>
+      <Sphere DX="15" DY="0" Radius="8"/>
+      <Sphere DX="0" DY="0" Radius="8"/>
+      <Sphere DX="-12" DY="3" Radius="6"/>
+      <Sphere DX="-27" DY="0" Radius="8"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="enemy_bomb" MinSpeed="0" MaxSpeed="0" VerticalSpeed="100">
+    <Caps ID="$PHYS_CAPS_FALLING"/>
+    <Collision Layer="$COLLISIONS_ENEMY_HARMLESS">
+      <Sphere DX="6" DY="0" Radius="7"/>
+      <Sphere DX="-10" DY="0" Radius="5"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="bomb_explosion" MinSpeed="0" MaxSpeed="0" VerticalSpeed="0">
+    <Collision Layer="$COLLISIONS_ENEMY_INVUL">
+      <Sphere DX="-8" DY="0" Radius="11"/>
+      <Sphere DX="8" DY="0" Radius="11"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="player_bomb" MinSpeed="300" MaxSpeed="300" VerticalSpeed="120">
+    <Collision Layer="$COLLISIONS_ENEMY_HARMLESS_SHOT_DOWN">
+      <Sphere DX="0" DY="0" Radius="9"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="ufo_spawn" MinSpeed="0" MaxSpeed="0" VerticalSpeed="0">
+  </Physic>
+  <Physic Name="ufo" MinSpeed="100" MaxSpeed="100" VerticalSpeed="50" Accel="10000">
+    <Collision Layer="$COLLISIONS_ENEMY">
+      <Sphere DX="0" DY="0" Radius="15"/>
+      <Sphere DX="-15" DY="0" Radius="10"/>
+      <Sphere DX="15" DY="0" Radius="10"/>
+    </Collision>
+  </Physic>
+  <Physic Name="ufo_despawn" MinSpeed="0" MaxSpeed="0" VerticalSpeed="0">
+  </Physic>
+  <Physic Name="ufo_death" MinSpeed="0" MaxSpeed="0" VerticalSpeed="0">
+  </Physic>
+  <Physic Name="ufo_dead" MinSpeed="0" MaxSpeed="0" VerticalSpeed="180">
+    <Caps ID="$PHYS_CAPS_FALLING"/>
+    <Collision Layer="$COLLISIONS_ENEMY_HARMLESS_SHOT_DOWN">
+      <Sphere DX="0" DY="0" Radius="9"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+  
+  <Physic Name="hyperjet_slow" MinSpeed="100" MaxSpeed="100" VerticalSpeed="0">
+    <Collision Layer="$COLLISIONS_ENEMY">
+      <Sphere DX="15" DY="0" Radius="10"/>
+      <Sphere DX="0" DY="0" Radius="8"/>
+      <Sphere DX="-12" DY="0" Radius="5"/>
+      <Sphere DX="-19" DY="0" Radius="5"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="hyperjet_stop" MinSpeed="0" MaxSpeed="0" VerticalSpeed="0">
+    <Collision Layer="$COLLISIONS_ENEMY">
+      <Sphere DX="15" DY="0" Radius="10"/>
+      <Sphere DX="0" DY="0" Radius="8"/>
+      <Sphere DX="-12" DY="0" Radius="5"/>
+      <Sphere DX="-19" DY="0" Radius="5"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="hyperjet_fast" MinSpeed="0" MaxSpeed="800" VerticalSpeed="0" Accel="800">
+    <Collision Layer="$COLLISIONS_ENEMY">
+      <Sphere DX="15" DY="0" Radius="10"/>
+      <Sphere DX="0" DY="0" Radius="8"/>
+      <Sphere DX="-12" DY="0" Radius="5"/>
+      <Sphere DX="-19" DY="0" Radius="5"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+  
+  <Physic Name="hyperjet_dead" MinSpeed="0" MaxSpeed="0" VerticalSpeed="180">
+    <Caps ID="$PHYS_CAPS_FALLING"/>
+    <Collision Layer="$COLLISIONS_ENEMY_HARMLESS_SHOT_DOWN">
+      <Sphere DX="0" DY="0" Radius="9"/>
+    </Collision>
+  </Physic>
+  
+  <!-- ================================================================== -->
+
+  <Physic Name="paranoia" MinSpeed="200" MaxSpeed="400">
+    <Collision Layer="$COLLISIONS_ENEMY_HARMLESS">
+      <Sphere DX="15" DY="0" Radius="10"/>
+      <Sphere DX="0" DY="0" Radius="5"/>
+      <Sphere DX="-15" DY="0" Radius="5"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="paranoia_dead" MinSpeed="200" MaxSpeed="200" VerticalSpeed="180">
+    <Caps ID="$PHYS_CAPS_FALLING"/>
+    <Collision Layer="$COLLISIONS_ENEMY_HARMLESS_SHOT_DOWN"/>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="shuttle" MinSpeed="200" MaxSpeed="300" VerticalSpeed="100" FlipTimer="1.0">
+    <Collision Layer="$COLLISIONS_ENEMY">
+      <Sphere DX="15" DY="0" Radius="9"/>
+      <Sphere DX="0" DY="0" Radius="9"/>
+      <Sphere DX="-15" DY="0" Radius="9"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="shuttle_dead" MinSpeed="100" MaxSpeed="200" VerticalSpeed="150" FlipTimer="1.0">
+    <Caps ID="$PHYS_CAPS_FALLING"/>
+    <Collision Layer="$COLLISIONS_ENEMY_SHOT_DOWN">
+      <Sphere DX="15" DY="0" Radius="9"/>
+      <Sphere DX="0" DY="0" Radius="9"/>
+      <Sphere DX="-15" DY="0" Radius="9"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="satellite" MinSpeed="75" MaxSpeed="75" VerticalSpeed="75"  FlipTimer="0.0">
+    <Collision Layer="$COLLISIONS_ENEMY_INVUL">
+      <Sphere DX="15" DY="0" Radius="9"/>
+      <Sphere DX="0" DY="0" Radius="9"/>
+      <Sphere DX="-15" DY="0" Radius="9"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="spacejet" MinSpeed="300" MaxSpeed="300" VerticalSpeed="100" FlipTimer="1.0">
+    <Collision Layer="$COLLISIONS_ENEMY_HARMLESS">
+      <Sphere DX="15" DY="0" Radius="9"/>
+      <Sphere DX="0" DY="0" Radius="11"/>
+      <Sphere DX="-15" DY="0" Radius="9"/>
+    </Collision>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="spacejet_dead" MinSpeed="100" MaxSpeed="100" VerticalSpeed="150" FlipTimer="0.001">
+    <Caps ID="$PHYS_CAPS_FALLING"/>
+    <Collision Layer="$COLLISIONS_ENEMY_HARMLESS_SHOT_DOWN"/>
+  </Physic>
+
+  <!-- ================================================================== -->
+
+  <Physic Name="final_explosion" MinSpeed="0" MaxSpeed="0" VerticalSpeed="0" FlipTimer="0">
+  </Physic>
+
+  <!-- ================================================================== -->
+
+</Physics>

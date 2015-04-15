@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Mechanics>
+
+	<!-- ================================================================== -->	
+
+	<Mechanic Name="player_plane" Type="$GM_PLAYER" StatType="$STAT_TYPE_PLAYER" DeathObject="player_dead" Owner="$OWNER_PLAYER1">
+		<Weapon ID="0" Object="player_bullet" Cooldown="0.4" Point="GunPoint" Ammo="INFINITE" />
+		<Weapon ID="1" Object="player_bomb" AI="player_bomb_ai" Cooldown="0.5" Point="BombPoint" Ammo="1" AngleLimit="30" HeightLimit="350"/>
+
+    <Weapon ID="2" Object="player_bullet_hlw"   Cooldown="0.4" Point="GunPoint" Ammo="INFINITE" Date="31.10" />
+    <Weapon ID="3" Object="player_bullet_xmas"  Cooldown="0.4" Point="GunPoint" Ammo="INFINITE" Date="25.12"/>
+    <Weapon ID="4" Object="player_bullet_ny"    Cooldown="0.4" Point="GunPoint" Ammo="INFINITE" Date="01.01"/>
+    <Weapon ID="5" Object="player_bullet_stval" Cooldown="0.4" Point="GunPoint" Ammo="INFINITE" Date="14.02"/>
+	</Mechanic>
+
+  <Mechanic Name="dummy_dead" Type="$GM_SHOT_DOWN"/>
+  
+	<Mechanic Name="ai_victim_prop" Type="$GM_ENEMY" StatType="$STAT_TYPE_PROP" DeathObject="victim_prop_dead" DeathAI="victim_prop_dead" Owner="$OWNER_AI" Score="10">
+	</Mechanic>
+
+  <Mechanic Name="ai_victim_jet" Type="$GM_ENEMY" StatType="$STAT_TYPE_JET" DeathObject="victim_jet_dead" DeathAI="victim_jet_dead" Owner="$OWNER_AI" Score="10">
+  </Mechanic>
+
+  <Mechanic Name="ai_enemy_prop" Type="$GM_ENEMY" StatType="$STAT_TYPE_PROP" DeathObject="enemy_prop_dead" DeathAI="enemy_prop_dead" Owner="$OWNER_AI" Score="20">
+  </Mechanic>
+
+  <Mechanic Name="ai_enemy_jet" Type="$GM_ENEMY" StatType="$STAT_TYPE_JET" DeathObject="enemy_jet_dead" DeathAI="enemy_jet_dead" Owner="$OWNER_AI"  Score="20">
+  </Mechanic>
+
+  <Mechanic Name="player_bullet" Type="$GM_BULLET">
+  </Mechanic>
+  <Mechanic Name="player_bullet_hlw" Type="$GM_BULLET">
+  </Mechanic>
+  <Mechanic Name="player_bullet_xmas" Type="$GM_BULLET">
+  </Mechanic>
+  <Mechanic Name="player_bullet_ny" Type="$GM_BULLET">
+  </Mechanic>
+  <Mechanic Name="player_bullet_stval" Type="$GM_BULLET">
+  </Mechanic>
+
+  <Mechanic Name="shot_down" Type="$GM_SHOT_DOWN" DeathObject="explosion_on_target" DeathAI="explosion_on_target">
+  </Mechanic>
+
+  <Mechanic Name="target" Type="$GM_TARGET">
+  </Mechanic>
+
+  <Mechanic Name="skymine" Type="$GM_ENEMY_INVUL" Owner="$OWNER_AI">
+  </Mechanic>
+
+  <Mechanic Name="ai_enemy_copter" Type="$GM_ENEMY" StatType="$STAT_TYPE_COPTER" DeathObject="enemy_copter_dead" DeathAI="enemy_copter_dead" Owner="$OWNER_AI"  Score="40">
+    <Weapon ID="0" Object="dart" AI="copter_dart_ai" Cooldown="0.4" Point="GunPoint" Ammo="INFINITE" />
+  </Mechanic>
+
+  <Mechanic Name="dart" Type="$GM_ENEMY_INVUL" Owner="$OWNER_AI">
+  </Mechanic>
+
+  <Mechanic Name="two_seater" Type="$GM_ENEMY" StatType="$STAT_TYPE_TWO_SEATER" DeathObject="enemy_prop_dead" DeathAI="two_seater_morph1" Owner="$OWNER_AI" Score="10">
+  </Mechanic>
+
+  <Mechanic Name="two_seater_morph" Type="$GM_ENEMY_INVUL" DeathObject="" DeathAI="" Owner="$OWNER_AI" Score="0">
+  </Mechanic>
+
+  <Mechanic Name="bomber" Type="$GM_ENEMY" StatType="$STAT_TYPE_BOMBER" DeathObject="enemy_bomber_dead" DeathAI="enemy_bomber_dead" Owner="$OWNER_AI"  Score="40">
+    <Weapon ID="0" Object="enemy_bomb" AI="enemy_bomb_ai" Cooldown="0.1" Point="BombPoint" Ammo="INFINITE" />
+  </Mechanic>
+
+  <Mechanic Name="enemy_bomb" Type="$GM_ENEMY" Owner="$OWNER_AI" Score="10">
+  </Mechanic>
+
+  <Mechanic Name="bomb_explosion" Type="$GM_ENEMY_INVUL" Owner="$OWNER_AI" Score="0">
+  </Mechanic>
+
+  <Mechanic Name="player_bomb" Type="$GM_SHOT_DOWN" StatType="$STAT_TYPE_PLAYER_BOMB" Owner="$OWNER_PLAYER1" Score="0" DeathObject="explosion_on_target" DeathAI="explosion_on_target">
+  </Mechanic>
+
+  <Mechanic Name="ufo_spawn" Type="$GM_ENEMY" Owner="$OWNER_AI" Score="0" DeathObject="" DeathAI="">
+  </Mechanic>
+  <Mechanic Name="ufo" Type="$GM_ENEMY" StatType="$STAT_TYPE_UFO" Owner="$OWNER_AI" Score="50" DeathObject="ufo_death" DeathAI="ufo_death">
+  </Mechanic>
+  <Mechanic Name="ufo_despawn" Type="$GM_ENEMY" Owner="$OWNER_AI" Score="0" DeathObject="" DeathAI="">
+  </Mechanic>
+  <Mechanic Name="ufo_death" Type="$GM_ENEMY" Owner="$OWNER_AI" Score="0" DeathObject="" DeathAI="">
+  </Mechanic>
+
+  <Mechanic Name="ufo_dead" Type="$GM_SHOT_DOWN" Owner="$OWNER_AI" Score="0" DeathObject="explosion_on_target" DeathAI="explosion_on_target">
+  </Mechanic>
+
+  <Mechanic Name="hyperjet_slow" Type="$GM_ENEMY" StatType="$STAT_TYPE_HYPER_SLOW" Owner="$OWNER_AI" Score="50" DeathObject="hyperjet_dead1" DeathAI="hyperjet_dead1">
+  </Mechanic>
+  <Mechanic Name="hyperjet_stop" Type="$GM_ENEMY" StatType="$STAT_TYPE_HYPER_SLOW" Owner="$OWNER_AI" Score="50" DeathObject="hyperjet_dead1" DeathAI="hyperjet_dead1">
+  </Mechanic>
+  <Mechanic Name="hyperjet_fast" Type="$GM_ENEMY" StatType="$STAT_TYPE_HYPER_FAST" Owner="$OWNER_AI" Score="50" DeathObject="hyperjet_dead1" DeathAI="hyperjet_dead1">
+  </Mechanic>
+  <Mechanic Name="hyperjet_dead" Type="$GM_SHOT_DOWN" Owner="$OWNER_AI" Score="0" DeathObject="explosion_on_target" DeathAI="explosion_on_target">
+  </Mechanic>
+
+  <Mechanic Name="paranoia_white" Type="$GM_ENEMY" StatType="$STAT_TYPE_PARANOIA" Owner="$OWNER_AI" Score="10" DeathObject="paranoia_white_dead" DeathAI="paranoia_dead">
+  </Mechanic>
+
+  <Mechanic Name="paranoia_red" Type="$GM_ENEMY" StatType="$STAT_TYPE_PARANOIA" Owner="$OWNER_AI" Score="10" DeathObject="paranoia_red_dead" DeathAI="paranoia_dead">
+  </Mechanic>
+
+  <Mechanic Name="paranoia_dead" Type="$GM_SHOT_DOWN" Owner="$OWNER_AI" Score="0" DeathObject="explosion_on_target" DeathAI="explosion_on_target">
+  </Mechanic>
+
+  <Mechanic Name="shuttle" Type="$GM_ENEMY" StatType="$STAT_TYPE_SHUTTLE" Owner="$OWNER_AI" Score="50" DeathObject="shuttle_dead" DeathAI="shuttle_dead">
+  </Mechanic>
+
+  <Mechanic Name="shuttle_dead" Type="$GM_SHOT_DOWN" Owner="$OWNER_AI" Score="0" DeathObject="explosion_on_target" DeathAI="explosion_on_target">
+  </Mechanic>
+
+  <Mechanic Name="satellite" Type="$GM_ENEMY_INVUL" Owner="$OWNER_AI">
+  </Mechanic>
+
+  <Mechanic Name="spacejet" Type="$GM_ENEMY" StatType="$STAT_TYPE_SPACEJET" Owner="$OWNER_AI" Score="10" DeathObject="spacejet_dead" DeathAI="spacejet_dead">
+  </Mechanic>
+
+  <Mechanic Name="spacejet_dead" Type="$GM_SHOT_DOWN" Owner="$OWNER_AI" Score="0" DeathObject="explosion_on_target" DeathAI="explosion_on_target">
+  </Mechanic>
+  
+  <!-- ================================================================== -->
+	
+</Mechanics>
